@@ -1,7 +1,7 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <a class="navbar-brand m-0">
-        <h4 >Bureau of Fire Protection</h4>
+        <h4 >BFP</h4>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -41,7 +41,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="enquiries.php">
+          <a class="nav-link  " href="users.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class = "fa fa-user-plus text-dark text-lg"></i>
             </div>

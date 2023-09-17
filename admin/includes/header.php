@@ -1,3 +1,5 @@
+<?php include('../config/function.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +9,14 @@
   <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>
-   Bureau of Fire Protection
+   <?php 
+   if(isset($pageTitle)){
+    echo $pageTitle;
+   }
+   else{
+    echo 'BFP || Bureau of Fire Protection';
+   }
+   ?>
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />

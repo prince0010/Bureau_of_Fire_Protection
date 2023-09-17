@@ -7,26 +7,27 @@
                     <h5 class="font-weight-bolder mb-0">
                       2
                     </h5>
-                </div>
+              
           </div>
-
+          </div>
+          <div class="col-md-3 mb-4">
           <div class="card card-body p-3">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Something</p>
                     <h5 class="font-weight-bolder mb-0">
-                      2
+                     2
                     </h5>
-                </div>
+              
           </div>
-
+          </div>
+          <div class="col-md-3 mb-4">
           <div class="card card-body p-3">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Something</p>
                     <h5 class="font-weight-bolder mb-0">
-                      2
+                     2
                     </h5>
-                </div>
+              
           </div>
-
-
+          </div>
 </div>
 
 
