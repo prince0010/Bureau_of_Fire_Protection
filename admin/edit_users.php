@@ -15,8 +15,10 @@ include('includes/header.php'); ?>
                     </h4>
                 </div>
                 <div class="card-body">
-                    
-                <?= alertMessage(); ?>
+
+                     <div id ="alertmessage">
+                            <?= alertMessage(); ?>
+                        </div>
 
                 <form action="function.php" method = "POST">
                         <div class="row">

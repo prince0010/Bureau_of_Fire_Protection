@@ -25,7 +25,7 @@ session_start();
         if(isset($_SESSION['status']))
         {
             echo '
-            <div class = "alert alert-success id = "alert-message"">
+            <div class = "alert alert-success">
             <h6>'.$_SESSION['status'].'</h6>
             </div>';
             unset($_SESSION['status']);

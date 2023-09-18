@@ -12,7 +12,11 @@ include('includes/header.php'); ?>
                     <a href="add_users.php" class="btn btn-dark float-end">Add User</a>
                 </div>
                 <div class="card-body">
-                <?= alertMessage(); ?>
+
+                <div id ="alertmessage">
+                            <?= alertMessage(); ?>
+                        </div>
+
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>

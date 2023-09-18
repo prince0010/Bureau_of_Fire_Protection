@@ -12,9 +12,11 @@ include('includes/header.php'); ?>
                     </h4>
                 </div>
                 <div class="card-body">
-
-                    <?= alertMessage(); ?>
                     
+                <div id ="alertmessage">
+                            <?= alertMessage(); ?>
+                        </div>
+
                 <form action="function.php" method = "POST">
                         <div class="row">
                         <div class="col-md-6">
@@ -34,7 +36,7 @@ include('includes/header.php'); ?>
                             <div class="col-md-6">
                             <div class="mb-3">
                                 <label >Password </label>
-                                <input type="text" name = "password" class= "form-control">
+                                <input type="password" name = "password" class= "form-control">
                             </div>
                             </div>
                             <div class="col-md-6">
