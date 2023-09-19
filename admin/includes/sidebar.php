@@ -52,6 +52,7 @@
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Setting</h6>
         </li>
+
         <li class="nav-item">
           <a class="nav-link  " href="setting.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -64,7 +65,7 @@
       </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
-      <a class="btn bg-dark mt-3 w-100" href = "logout.php"> Logout </a>
+      <a class="btn text-white bg-dark mt-3 w-100" href = "logout.php"> Logout </a>
     </div>
    
   </aside>

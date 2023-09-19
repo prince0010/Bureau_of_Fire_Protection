@@ -19,6 +19,7 @@ include('includes/header.php'); ?>
 
                 <form action="function.php" method = "POST">
                         <div class="row">
+                            
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label >Name </label>
@@ -39,22 +40,25 @@ include('includes/header.php'); ?>
                                 <input type="password" name = "password" class= "form-control">
                             </div>
                             </div>
+
                             <div class="col-md-6">
                             <div class="mb-3">
                                 <label >Phone Number </label>
                                 <input type="text" name = "phone" class= "form-control">
                             </div>
                             </div>
+
                             <div class="col-md-6">
                             <div class="mb-5">
                                 <label >Select Role </label>
                                 <select name="role" id="" class="form-control" >
                                     <option value="" disabled>-- Select Role -- </option>
-                                    <option value="admin">Admin</option>
-                                    <option value="client">Client</option>
+                                    <option value= "Admin"> Admin</option>
+                                    <option value= "Client"> Client</option>
                                 </select>
                             </div>
                         </div>
+
                         <div class="col-md-6">
                         <div class="mb-3">
                             <label >Is Ban </label>

@@ -22,26 +22,48 @@ include('includes/header.php'); ?>
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
+                                    <th>Phone Number</th>
                                     <th>Email</th>
-                                    <th>Password</th>
-                                    <th>Role</th>
                                     <th>Status</th>
+                                    <th>Role</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Name</td>
-                                    <td>123@gmail.com</td>
-                                    <td>123</td>
-                                    <td>Admin</td>
-                                    <td>Banned</td>
-                                    <td>
-                                        <a  href="edit_users.php" class = "btn btn-success btn-sm">Edit</a>
-                                        <a href="delete_users.php" class = "btn btn-danger btn-sm mx-2 ">Delete</a>
+                                <?php
+                                   $users = getAll('users');
+                                   if(mysqli_num_rows($users) > 0)
+                                   {
+                                            foreach($users as $userItem)
+                                            {
+                                                ?>
+                                           <tr>
+                                            <td><?= $userItem['id']?></td>
+                                            <td><?= $userItem['name']?></td>
+                                            <td><?= $userItem['phone_num']?></td>
+                                            <td><?= $userItem['email']?></td>
+                                            <td><?= $userItem['is_ban'] == true ? 'Banned' : 'Active' ?></td>
+                                            <td><?= $userItem['role']?></td>
+                                            <td>
+                                        <a  href="edit_users.php?id=<?= $userItem['id']?>" class = "btn btn-success btn-sm">Edit</a>
+                                        <a href="delete_users_func.php?id=<?= $userItem['id']?>"
+                                         class = "btn btn-danger btn-sm mx-2 "
+                                         onclick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
                                     </td>
                                 </tr>
+                                                <?php
+                                               
+                                            }
+                                   }
+                                   else{
+                                    ?>
+                                        <td cosplan = "7" >No Record Found</td>
+                                    <?php
+
+                                   }
+
+                                ?>
+                            
                             </tbody>
                         </table>
                 </div>
