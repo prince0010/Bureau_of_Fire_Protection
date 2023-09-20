@@ -32,9 +32,7 @@
 
     }
 
-
-
-   
+//    Update User Function
     if(isset($_POST['updateUser'])){
 
         $name = validate($_POST['name']);
