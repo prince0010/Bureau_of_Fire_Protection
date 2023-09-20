@@ -13,7 +13,7 @@
         if($name != '' && $email != '' && $password != '' && $phone != '')
         {
             
-            $query = "INSERT INTO users(name, phone_num, email, password, is_ban, role) 
+            $query = "INSERT INTO user(name, phone_num, email, password, is_ban, role) 
             VALUES ('$name',' $phone','$email','$password','$is_ban','$role')";
             $result = mysqli_query($conn, $query);
 
@@ -48,14 +48,14 @@
         // VERIFICATION AND CHECKING
         // Checking if the ID is existed or created and if not then it will display the status 404 or 500 in this function thartt you can find in config/function.php
         // Database TableName of the specific ID that you want to check if its existed or created and the ID
-        $userID = getByID('users', $id);
+        $userID = getByID('user', $id);
         // If the status is not equals to 200 that you can find in this getByID function in config/function.php
         if($userID['status'] != 200) {
             redirect('edit_users.php?id='.$id, 'No such ID is Recorded in Database. ');
         }
         if($name != '' && $email != '' && $password != '' && $phone != '')
         {
-            $query = "UPDATE users SET 
+            $query = "UPDATE user SET 
             name = '$name', 
             phone_num = '$phone', 
             email = '$email', 

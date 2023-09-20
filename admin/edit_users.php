@@ -36,7 +36,7 @@ include('includes/header.php'); ?>
                             // we will get the single record from the database by using parameter value
                                 // Database table and the Id that has beING CHECKED
 
-                            $user = getByID('users',checkParamId('id'));
+                            $user = getByID('user',checkParamId('id'));
                             // If its status == 200 then it means they found a data in the database table, its chgecking every data by ID of that datatable
                             if($user['status'] == 200)
                             {

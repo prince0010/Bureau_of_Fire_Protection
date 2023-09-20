@@ -7,11 +7,11 @@
     {
         $userId = validate($paraResult);
 
-        $user = getById('users', $userId);
+        $user = getById('user', $userId);
         if($user['status'] == 200)
         {   
                 // If success then delete this id or this part
-            $userdelete = deleteQuery('users', $userId);
+            $userdelete = deleteQuery('user', $userId);
             if($userdelete)
             {
                 redirect('users.php', 'User Deleted Successfully');

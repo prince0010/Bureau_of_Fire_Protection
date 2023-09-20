@@ -31,7 +31,7 @@ include('includes/header.php'); ?>
                             </thead>
                             <tbody>
                                 <?php
-                                   $users = getAll('users');
+                                   $users = getAll('user');
                                    if(mysqli_num_rows($users) > 0)
                                    {
                                             foreach($users as $userItem)
