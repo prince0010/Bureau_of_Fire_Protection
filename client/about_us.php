@@ -1,6 +1,6 @@
 
 <?php 
-$pageTitle = "BFP || Bureau of Fire Protection";
+$pageTitle = "BFP || About Us";
 include('includes/header.php')?>
 
 
