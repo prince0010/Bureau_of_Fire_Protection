@@ -22,12 +22,12 @@
                 redirect('users.php', 'User/Admin Added Successfully');
             }
             else{
-                redirect('add_users.php', 'Something Went Wrong. ');
+                redirect('add_users.php', 'Something Went Wrong. ', 'danger');
             }
 
         }
         else{
-                redirect('add_users.php', 'Please fill up all the Input Field');
+                redirect('add_users.php', 'Please fill up all the Input Field', 'danger');
         }
 
     }
@@ -49,7 +49,7 @@
         $userID = getByID('user', $id);
         // If the status is not equals to 200 that you can find in this getByID function in config/function.php
         if($userID['status'] != 200) {
-            redirect('edit_users.php?id='.$id, 'No such ID is Recorded in Database. ');
+            redirect('edit_users.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
         }
         if($name != '' && $email != '' && $password != '' && $phone != '')
         {
@@ -69,12 +69,12 @@
                 redirect('edit_users.php?id='.$id, 'User/Admin Updated Successfully');
             }
             else{
-                redirect('edit_users.php', 'Something Went Wrong. ');
+                redirect('edit_users.php', 'Something Went Wrong. ', 'danger');
             }
 
         }
         else{
-                redirect('edit_users.php', 'Please fill up all the Input Field');
+                redirect('edit_users.php', 'Please fill up all the Input Field', 'danger');
         }
 
     }

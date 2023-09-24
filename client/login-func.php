@@ -23,7 +23,7 @@
                     {
                                 if($row['is_ban'] == 1)
                                 {
-                                    redirect('login.php', "Your Account has been Banned.");
+                                    redirect('login.php', "Your Account has been Banned.", 'danger');
                                 }
 
                                 // Authentication using SESSION
@@ -41,7 +41,7 @@
                     elseif($row['role'] == 'Client') {
                         if($row['is_ban'] == 1)
                         {
-                            redirect('login.php', "Your Account hass been Banned. Contact the Admin for more <strong> Info. </strong>");
+                            redirect('login.php', "Your Account hass been Banned. Contact the Admin for more <strong> Info. </strong>", 'danger');
                         }
                         // CLIENT
                         // Authentication using SESSION
@@ -58,16 +58,16 @@
                 }
                 else
                 {
-                    redirect('login.php', "Invalid Email or Password");
+                    redirect('login.php', "Invalid Email or Password", 'danger');
                 }
             }
         }
         else{
-            redirect('login.php', "Something Went Wrong");
+            redirect('login.php', "Something Went Wrong", 'danger');
         }
     }
     else{
-        redirect('login.php', "All Fields are needed to fill up");
+        redirect('login.php', "All Fields are needed to fill up", 'danger');
     }
 
 

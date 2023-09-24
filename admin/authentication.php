@@ -9,6 +9,7 @@
             $role = validate($_SESSION['loggedInUserRole']);
             $email  = validate($_SESSION['loggedInUser']['email']);
 
+            // Need og email na gikan sa database og kwaon ang role dayon ato so nag base sa username na including iyang role pag sa authentication of users na dayon.
             $query = "SELECT * FROM user WHERE email = '$email' AND role= '$role' LIMIT 1";
             $result = mysqli_query($conn, $query);
 
@@ -18,7 +19,7 @@
 
                     // function logoutSession
                     logoutSession();
-                    redirect('../client/login.php', 'Access Denied.');
+                    redirect('../client/login.php', 'Access Denied.', 'danger');
                 }
 
                 // if result is not found then redirect back
@@ -26,15 +27,15 @@
                 {
                     // Insiide of this function, pass this ($result) and get the data in MYSQLI_ASSOC or mysqli associate data 
                         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                    if($row['role'] != 'Admin' )
+                    if($row['role'] != 'Admin')
                     { 
                         if($row['is_ban'] == 1)
                         {
                             logoutSession();
-                            redirect('../client/login.php', 'Your Account is Banned.');
+                            redirect('../client/login.php', 'Your Account is Banned.', 'danger');
                         }
                         logoutSession();
-                        redirect('../client/login.php', 'Access Denied');
+                        redirect('../client/login.php', 'Access Denied', 'danger');
                     }
             }
             }
@@ -42,13 +43,13 @@
             {
                    // function logoutSession
                    logoutSession();
-                   redirect('../client/login.php', 'Something Went Wrong!');
+                   redirect('../client/login.php', 'Something Went Wrong!', 'danger');
             }
         }
     }
     else{
         
-           redirect('../client/login.php', 'Login to Access');
+           redirect('../client/login.php', 'Login to Access', 'danger');
     }
 
 

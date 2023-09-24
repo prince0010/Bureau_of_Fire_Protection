@@ -1,4 +1,8 @@
-<?php include('../config/function.php'); ?>
+<?php 
+
+require '../config/function.php' ;
+// include('../admin/authentication.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

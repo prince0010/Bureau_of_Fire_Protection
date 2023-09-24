@@ -15,15 +15,14 @@ session_start();
     // logout
     function logoutSession()
     {
-
-        
         unset($_SESSION['auth']);
         unset($_SESSION['loggedInUserRole']);
         unset($_SESSION['loggedInUser']);
     }
 
-    function redirect($url, $status)
+    function redirect($url, $status, $alertType = null)
     {
+        $_SESSION['alertType'] = $alertType ?? 'success';
             $_SESSION['status'] = $status;
             header('Location: '.$url);
             exit(0);
@@ -35,27 +34,13 @@ session_start();
         if(isset($_SESSION['status']))
         {
             echo '
-            <div class = "alert alert-success">
+            <div class="alert alert-'.$_SESSION['alertType'].'">
             <h6>'.$_SESSION['status'].'</h6>
             </div>';
             unset($_SESSION['status']);
         }
     }
     
-
-    // Failed Message
-    function failedMessage()
-    {
-        if(isset($_SESSION['status']))
-        {
-            echo '
-            <div class = "alert alert-danger">
-            <h6>'.$_SESSION['status'].'</h6>
-            </div>';
-            unset($_SESSION['status']);
-        }
-    }
-
 
     function getAll($tableName)
     {
