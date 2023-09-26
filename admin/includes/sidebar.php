@@ -1,7 +1,7 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <a class="navbar-brand m-0">
-        <h4 >BFP</h4>
+        <h4 class = "text-center text-break" > <?= webSetting('web_name') ?></h4>
       </a>
     </div>
     <hr class="horizontal dark mt-0">

@@ -17,10 +17,12 @@ include('./authentication.php');
     echo $pageTitle;
    }
    else{
-    echo 'BFP || Bureau of Fire Protection';
+    // If the data is not found then return the BFP || Bureau of Fire Protection
+    echo webSetting('title') ?? 'BFP || Bureau of Fire Protection';
    }
-   ?>
-  </title>
+   ?> </title>
+  <meta name="description" content="<?= webSetting('mdescription') ?? 'Meta Description';?>">
+  <meta name="keyword" content="<?= webSetting('mkeyword') ?? 'Meta Keyword';?>">
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->

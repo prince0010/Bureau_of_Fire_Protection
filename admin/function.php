@@ -1,5 +1,80 @@
 <?php
         require '../config/function.php';
+        
+        
+        
+    //Save Settings
+    if(isset($_POST['saveSettings']))
+        {
+        $title = validate($_POST['title']);
+        $domain = validate($_POST['domain']);
+
+        $sdescription = validate($_POST['sdescription']);
+
+        $mdescription = validate($_POST['mdescription']);
+        $mkeyword = validate($_POST['mkeyword']);
+
+        $email1 = validate($_POST['email1']);
+        $email2 = validate($_POST['email2']);
+
+        $phone1 = validate($_POST['phone1']);
+        $phone2 = validate($_POST['phone2']);
+
+        $address = validate($_POST['address']);
+        $web_name = validate($_POST['web_name']);
+
+        $settingID = validate($_POST['settingID']);
+
+        // if($title != '' && $domain != '' && $sdescription != '' && $mdescription != '' && $mkeyword != '' && 
+        // $email1 != '' && $email2 != '' && $phone1 != '' && $phone2 != '' && $address != '') 
+        if($settingID == 'insert')
+        {
+            $query = "INSERT INTO settings (title, domain, sdescription, mdescription, mkeyword, email1, email2, phone1, phone2, address, web_name)
+             VALUES ('$title','$domain','$sdescription','$mdescription','$mkeyword','$email1','$email2','$phone1','$phone2','$address', $web_name)";
+            $result = mysqli_query($conn, $query);
+            if($result){
+                redirect('setting.php', 'Setting Successfully Saved');
+            }
+            else
+            {
+                redirect('setting.php', 'Something Went Wrong!');
+    
+            }
+        }
+        // If naa nay data sa database na settings table 
+        // if the ID is number then it calls the settingID
+       if(is_numeric($settingID))
+       {
+            $query = "UPDATE settings SET 
+            title = '$title', 
+            domain = '$domain', 
+            sdescription = '$sdescription',
+            mdescription = '$mdescription',
+            mkeyword = '$mkeyword',
+            email1 = '$email1',
+            email2  = '$email2',
+            phone1 = '$phone1',
+            phone2 = '$phone2',
+            address = '$address',
+            web_name = '$web_name'
+             WHERE id = '$settingID' ";
+
+            $result = mysqli_query($conn, $query); 
+
+            if($result){
+                redirect('setting.php', 'Setting Successfully Updated');
+            }
+            else
+            {
+                redirect('setting.php', 'Something Went Wrong!');
+    
+            }
+       }
+
+      
+
+        } 
+
 
     if(isset($_POST['addUser']))
     {
@@ -31,6 +106,7 @@
         }
 
     }
+
 
 //    Update User Function
     if(isset($_POST['updateUser'])){
@@ -77,6 +153,26 @@
                 redirect('edit_users.php', 'Please fill up all the Input Field', 'danger');
         }
 
+    }
+
+    // Save Service
+
+    if(isset($_POST['save_service']))
+    {
+        $serv_name = validate($_POST['service_name']);
+        $small_desc = validate($_POST['small_desc']);
+        $long_desc = validate($_POST['long_desc']);
+
+        $service_img = validate($_POST['service_img']);
+
+        $meta_title = validate($_POST['meta_title']);
+        $meta_description = validate($_POST['meta_description']);
+        $meta_keyboard = validate($_POST['meta_keyboard']);
+
+        $status = validate($_POST['status'] == true ? '1' : '0');
+
+        $query = "INSERT INTO services () VALUES ()";
+        $result = mysqli_query($conn, $query);
     }
 
 ?>

@@ -8,8 +8,10 @@ include('includes/header.php'); ?>
         <div class="col-md-121">
             <div class="card">
                 <div class="card-header">
-                    <h5> User List</h5>
+                    <h5> User List
                     <a href="add_users.php" class="btn btn-dark float-end">Add User</a>
+                    </h5>
+                   
                 </div>
                 <div class="card-body">
 
@@ -20,13 +22,13 @@ include('includes/header.php'); ?>
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Phone Number</th>
-                                    <th>Email</th>
-                                    <th>Status</th>
-                                    <th>Role</th>
-                                    <th>Action</th>
+                                    <th class = "text-center">Id</th>
+                                    <th class = "text-center">Name</th>
+                                    <th  class = "text-center">Phone Number</th>
+                                    <th class = "text-center">Email</th>
+                                    <th class = "text-center">Status</th>
+                                    <th class = "text-center">Role</th>
+                                    <th class = "text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,12 +40,12 @@ include('includes/header.php'); ?>
                                             {
                                                 ?>
                                            <tr>
-                                            <td><?= $userItem['id']?></td>
-                                            <td><?= $userItem['name']?></td>
-                                            <td><?= $userItem['phone_num']?></td>
+                                            <td><span class = "mx-4"> <?= $userItem['id']?> </span></td>
+                                            <td><span class = "mx-4"> <?= $userItem['name']?> </span></td>
+                                            <td><span class = "mx-4"> <?= $userItem['phone_num']?> </span></td>
                                             <td><?= $userItem['email']?></td>
-                                            <td><?= $userItem['is_ban'] == true ? 'Banned' : 'Active' ?></td>
-                                            <td><?= $userItem['role']?></td>
+                                            <td><?= $userItem['is_ban'] == true ? ' <span class = "badge bg-danger text-white mx-4"> Banned </span>' : '<span class ="badge bg-success text-white mx-4" > Active' ?></td>
+                                            <td><span class = "mx-4"> <?= $userItem['role']?> </span></td>
                                             <td>
                                         <a  href="edit_users.php?id=<?= $userItem['id']?>" class = "btn btn-success btn-sm">Edit</a>
                                         <a href="delete_users_func.php?id=<?= $userItem['id']?>"

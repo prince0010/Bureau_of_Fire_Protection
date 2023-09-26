@@ -1,11 +1,11 @@
 
 <?php 
 $pageTitle = "BFP || Login";
-include('includes/header.php');
+include('inc/header.php');
 
 if(isset($_SESSION['auth']))
 {
-    redirect('index.php', 'You are logged in Successfully,');
+    redirect('index.php', 'You are already logged in,');
 }
 
 ?>

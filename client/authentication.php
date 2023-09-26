@@ -3,7 +3,7 @@
     // Check session if auth if logged in or not
     if(isset($_SESSION['auth']))
     {
-        // Set if the role is set or not since $_SESSION['loggedInUserRole'] is equals to the $row['role'] in the login_func we set the loggedInUserRole as a container for $row['role'] in the DB
+        // Set if the role is set or not
         if(isset($_SESSION['loggedInUserRole']))
         {
             $role = validate($_SESSION['loggedInUserRole']);
@@ -19,7 +19,7 @@
 
                     // function logoutSession
                     logoutSession();
-                    redirect('../client/login.php', 'Access Denied.', 'danger');
+                    redirect('login.php', 'Access Denied.', 'danger');
                 }
 
                 // if result is not found then redirect back
@@ -27,15 +27,15 @@
                 {
                     // Insiide of this function, pass this ($result) and get the data in MYSQLI_ASSOC or mysqli associate data 
                         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                    if($row['role'] == 'Client' && $row['role'] != 'Admin' )
+                    if($row['role'] == 'Admin')
                     { 
                         if($row['is_ban'] == 1)
                         {
                             logoutSession();
-                            redirect('../client/login.php', 'Your Account is Banned.', 'danger' );
+                            redirect('login.php', 'Your Account is Banned.', 'danger');
                         }
                         logoutSession();
-                        redirect('../client/login.php', 'Access Denied', 'danger');
+                        redirect('login.php', 'Access Denied', 'danger');
                     }
             }
             }
@@ -43,13 +43,13 @@
             {
                    // function logoutSession
                    logoutSession();
-                   redirect('../client/login.php', 'Something Went Wrong!', 'danger');
+                   redirect('login.php', 'Something Went Wrong!', 'danger');
             }
         }
     }
     else{
         
-           redirect('../client/login.php', 'Login to Access', 'danger');
+           redirect('login.php', 'Login to Access', 'danger');
     }
 
 

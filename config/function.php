@@ -12,6 +12,17 @@ session_start();
 
     }
 
+    // Changing soemthing UI for settings
+    function webSetting($columnName)
+    {
+        $setting = getByID('settings', 1);
+        // ['status'] is in the getByID function if 200 then its there and functional and not null
+        if($setting['status'] == 200){
+            // ['data'] it is in the getByID function it contains the datas in the chosen database table 
+            return $setting['data'][$columnName];
+        }   
+    }
+
     // logout
     function logoutSession()
     {
@@ -41,7 +52,7 @@ session_start();
         }
     }
     
-
+    // Select * from Datatable
     function getAll($tableName)
     {
         global $conn;
