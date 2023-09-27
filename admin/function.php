@@ -160,19 +160,67 @@
     if(isset($_POST['save_service']))
     {
         $serv_name = validate($_POST['service_name']);
+
+        // so here is we will replace the space blank to a dash '-' and we will start to lowercase on the service name
+        $slug = str_replace('', '-', strtolower($serv_name));
+
         $small_desc = validate($_POST['small_desc']);
-        $long_desc = validate($_POST['long_desc']);
+        $long_desc = validate($_POST['long_desc']); 
 
-        $service_img = validate($_POST['service_img']);
+        // IMAGE UPLOAD START
+        // Check if the image is uploaded or not
+        if($_FILES['service_img']['size'] > 0){
 
+            $service_img = $_FILES['service_img']['service_name'];
+
+            // extension in img like jpg, png and etc
+            $ImgFileTypes = strtolower(pathinfo($service_img, PATHINFO_EXTENSION)); 
+
+            if($ImgFileTypes != 'jpg' && $ImgFileTypes != 'jpeg' && $ImgFileTypes != 'png'){
+                // If it doesn't matches then it will redirect back
+            redirect('add_services.php', 'Sorry only jpg, jpeg and png Format Only. ', 'danger');
+
+            }
+
+            $path = "../assets/uploads/services/";
+
+            $img_extension = pathinfo($service_img, PATHINFO_EXTENSION);
+
+            $filename = time().'.'.$img_extension;
+
+            $finalImage = '../assets/uploads/services/'.$filename;
+
+        }
+        else
+        {
+            $finalImage = NULL;
+        }
+        // IMAGE UPLOAD END
+       
         $meta_title = validate($_POST['meta_title']);
         $meta_description = validate($_POST['meta_description']);
         $meta_keyboard = validate($_POST['meta_keyboard']);
 
         $status = validate($_POST['status'] == true ? '1' : '0');
 
-        $query = "INSERT INTO services () VALUES ()";
-        $result = mysqli_query($conn, $query);
+        $query = "INSERT INTO services (serv_name,slug,small_desc,long_desc,service_img,meta_title,meta_description,meta_keyboard,status)
+         VALUES ('$serv_name','$slug','$small_desc','$long_desc','$finalImage','$meta_title','$meta_description','$meta_keyboard','$status')";
+        $result = mysqli_query($conn, $query); 
+
+        if($result){
+            // If we dont upload the image so what in that case
+        if($_FILES['service_img']['size'] > 0){
+            // /if its coming, image has been uploaded then only move the image else continue to the redirect(add_service.php)
+            // Move the uploaded images in the $path
+            move_uploaded_file($_FILES['service_img']['tmp_name'], $path.$filename);
+        }
+            redirect('add_services.php', 'Services Added Successfully ');
+
+        }
+        else{
+            redirect('add_services.php', 'Something Went Wrong. ', 'danger');
+
+        }
     }
 
 ?>

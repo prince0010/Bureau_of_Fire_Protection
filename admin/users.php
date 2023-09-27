@@ -40,13 +40,13 @@ include('includes/header.php'); ?>
                                             {
                                                 ?>
                                            <tr>
-                                            <td><span class = "mx-4"> <?= $userItem['id']?> </span></td>
-                                            <td><span class = "mx-4"> <?= $userItem['name']?> </span></td>
-                                            <td><span class = "mx-4"> <?= $userItem['phone_num']?> </span></td>
-                                            <td><?= $userItem['email']?></td>
-                                            <td><?= $userItem['is_ban'] == true ? ' <span class = "badge bg-danger text-white mx-4"> Banned </span>' : '<span class ="badge bg-success text-white mx-4" > Active' ?></td>
-                                            <td><span class = "mx-4"> <?= $userItem['role']?> </span></td>
-                                            <td>
+                                            <td class = "text-center"> <?= $userItem['id']?> </td>
+                                            <td class = "text-center"><?= $userItem['name']?> </span></td>
+                                            <td class = "text-center"><?= $userItem['phone_num']?> </span></td>
+                                            <td class = "text-center"><?= $userItem['email']?></td>
+                                            <td class = "text-center"><?= $userItem['is_ban'] == true ? ' <span class = "badge bg-danger text-white mx-4"> Banned </span>' : '<span class ="badge bg-success text-white mx-4" > Active' ?></td>
+                                            <td class = "text-center"><?= $userItem['role']?> </span></td>
+                                            <td class = "text-center">
                                         <a  href="edit_users.php?id=<?= $userItem['id']?>" class = "btn btn-success btn-sm">Edit</a>
                                         <a href="delete_users_func.php?id=<?= $userItem['id']?>"
                                          class = "btn btn-danger btn-sm mx-2 "

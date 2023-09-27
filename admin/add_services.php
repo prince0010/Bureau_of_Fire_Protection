@@ -19,7 +19,8 @@ include('includes/header.php'); ?>
                             <?= alertMessage(); ?>
                         </div>
 
-                       <form action="function.php" method = "POST">
+                        <!-- The enctype= "multipart/form-data main attribute to accept the upload image in form submit if not added this it means not uplaod any image -->
+                       <form action="function.php" method = "POST" enctype='multipart/form-data'>
                         
                         <div class="mb-3">
                             <label> Service Name</label>
