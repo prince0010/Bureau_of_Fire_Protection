@@ -20,11 +20,11 @@ include('includes/header.php'); ?>
                         </div>
 
                         <!-- The enctype= "multipart/form-data main attribute to accept the upload image in form submit if not added this it means not uplaod any image -->
-                       <form action="function.php" method = "POST" enctype='multipart/form-data'>
-                        
+                       <form action="function.php" method = "POST" enctype="multipart/form-data">
+
                         <div class="mb-3">
                             <label> Service Name</label>
-                            <input type="text" name = "service_name" required class="form-control">
+                            <input type="text" name = "name" required class="form-control">
                         </div>
                         
                         <div class="mb-3">
@@ -39,7 +39,7 @@ include('includes/header.php'); ?>
                         
                         <div class="mb-3">
                             <label> Upload Service Image</label>
-                            <input type="file" name = "service_img" required class="form-control">
+                            <input type="file" name ="image" class="form-control">
                         </div>
                         
 
