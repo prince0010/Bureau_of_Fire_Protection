@@ -49,12 +49,19 @@ include('includes/header.php'); ?>
                             </div>
 
                             <div class="col-md-6">
+                            <div class="mb-3">
+                                <label >Address </label>
+                                <input type="text" name = "address" class= "form-control">
+                            </div>
+                            </div>
+
+                            <div class="col-md-6">
                             <div class="mb-5">
                                 <label >Select Role </label>
                                 <select name="role" id="" class="form-control" >
                                     <option value="" disabled>-- Select Role -- </option>
                                     <option value= "Admin"> Admin</option>
-                                    <option value= "Client"> Client</option>
+                                    <option value= "Employee"> Employee</option>
                                 </select>
                             </div>
                         </div>

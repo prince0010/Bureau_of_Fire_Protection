@@ -18,8 +18,8 @@ require '../config/function.php' ;
          ?>
     </title>
     
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
 

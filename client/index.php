@@ -1,17 +1,10 @@
+<?php include('include/header.php');?>
 
-<?php 
-$pageTitle = "BFP || Bureau of Fire Protection";
-include('includes/header.php');?>
-
-
-<div class="py-5">
-    <div class="container">
-    <div id ="alertmessage">
-      <?= alertMessage(); ?>
-         </div>
-       <h4>Home Page</h4>
-    </div>
+<div class="row">
+<div class="col-md-3 mb-4">
+         <h1> CLIENT HOMEPAGE </h1>
+          </div>
 </div>
-                       
 
-<?php include('includes/footer.php')?>
+
+<?php include('include/footer.php');?>

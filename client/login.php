@@ -38,6 +38,10 @@ if(isset($_SESSION['auth']))
                                     <div class="mb-3">
                                         <button type= "submit" name = "loginBtn" class="btn btn-dark w-100"> Login </button>
                                     </div>
+
+                                    <div class="mb-3">
+                                        <a href="sign_up.php">Create an Account?</a>
+                                    </div>
                                 </form>
                             </div>
                         </div>

@@ -1,8 +1,7 @@
 <?php
         require '../config/function.php';
-        
-        
-        
+
+  
     //Save Settings
     if(isset($_POST['saveSettings']))
         {
@@ -29,11 +28,12 @@
         // $email1 != '' && $email2 != '' && $phone1 != '' && $phone2 != '' && $address != '') 
         if($settingID == 'insert')
         {
-            $query = "INSERT INTO settings (title, domain, sdescription, mdescription, mkeyword, email1, email2, phone1, phone2, address, web_name)
-             VALUES ('$title','$domain','$sdescription','$mdescription','$mkeyword','$email1','$email2','$phone1','$phone2','$address', $web_name)";
+            $query = "INSERT INTO settings (title, web_name, domain, sdescription, mdescription, mkeyword, email1, email2, phone1, phone2, address )
+             VALUES ('$title','$web_name','$domain','$sdescription','$mdescription','$mkeyword','$email1','$email2','$phone1','$phone2','$address' )";
             $result = mysqli_query($conn, $query);
+
             if($result){
-                redirect('setting.php', 'Setting Successfully Saved');
+                redirect('setting.php', 'Setting Successfully Updated');
             }
             else
             {
@@ -82,14 +82,15 @@
         $email = validate($_POST['email']);
         $password = validate($_POST['password']);
         $phone = validate($_POST['phone']);
+        $address = validate($_POST['address']);
         $is_ban = validate($_POST['is_ban']) == true ? 1 : 0 ;
         $role = validate($_POST['role']);
 
-        if($name != '' && $email != '' && $password != '' && $phone != '')
+        if($name != '' && $email != '' && $password != '' && $phone != '' && $address != '')
         {
             
-            $query = "INSERT INTO user(name, phone_num, email, password, is_ban, role) 
-            VALUES ('$name',' $phone','$email','$password','$is_ban','$role')";
+            $query = "INSERT INTO user(name, phone_num, address, email, password, is_ban, role) 
+            VALUES ('$name',' $phone', '$address' ,'$email','$password','$is_ban','$role')";
             $result = mysqli_query($conn, $query);
 
             if($result)
@@ -115,6 +116,7 @@
         $email = validate($_POST['email']);
         $password = validate($_POST['password']);
         $phone = validate($_POST['phone']);
+        $address = validate($_POST['address']);
         $is_ban = validate($_POST['is_ban']) == true ? 1 : 0 ;
         $role = validate($_POST['role']);
         
@@ -127,11 +129,12 @@
         if($userID['status'] != 200) {
             redirect('edit_users.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
         }
-        if($name != '' && $email != '' && $password != '' && $phone != '')
+        if($name != '' && $email != '' && $password != '' && $phone != '' && $address != '')
         {
             $query = "UPDATE user SET 
             name = '$name', 
-            phone_num = '$phone', 
+            phone_num = '$phone',
+            address = '$address', 
             email = '$email', 
             password = '$password', 
             is_ban = '$is_ban', 

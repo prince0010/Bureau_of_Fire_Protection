@@ -38,10 +38,27 @@
 
                         redirect('../admin/index.php', "Logged In Successfully");
                     }
-                    else {
+                    elseif($row['role'] == 'Client'){
                         
-                            redirect('index.php', "Logged In Successfully");
-                    }
+                        if($row['is_ban'] == 1)
+                        {
+                            redirect('login.php', "Your Account has been Banned.", 'danger');
+                        }
+                          // Authentication using SESSION
+                    // Checked if its logged in
+                    // Logged in or 'auth' == true
+                    $_SESSION['auth'] = true;
+                    $_SESSION['loggedInUserRole'] = $row['role'];
+                    $_SESSION['loggedInUser'] = [
+                        'name' => $row['name'],
+                        'email' => $row['email']
+                    ];
+
+                    redirect('index.php', "Logged In Successfully");
+                }
+                else{
+                    redirect('login.php', "Something Went Wrong");
+                }
                 }
                 else
                 {
