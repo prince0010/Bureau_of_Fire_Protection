@@ -51,10 +51,16 @@ include('include/header.php'); ?>
                         </div>
                         </div>
                         
-                        
                         <div class="col-md-6">
                         <div class="mb-3">
                             <label >Remarks </label>
+                            <input type="text" name = "landmark" class= "form-control" autocomplete = "off">
+                        </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        <div class="mb-3">
+                            <label >Business Receipt </label>
                             <input type="text" name = "landmark" class= "form-control" autocomplete = "off">
                         </div>
                         </div>
