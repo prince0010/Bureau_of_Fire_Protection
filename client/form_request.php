@@ -22,8 +22,8 @@ include('include/header.php'); ?>
                 <form action="function.php" method = "POST">
                         <div class="row">
                         
-                      
-            <input type="hidden" name = "form_id" />
+                      <!-- ID OF EACH USERS -->
+            <input type="hidden" name = "form_id" value = "<?=$_SESSION["loggedInUser"]['id']?>" />
             
                       <div class="col-md-6">
                         <div class="mb-3">
