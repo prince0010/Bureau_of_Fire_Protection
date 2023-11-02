@@ -1,5 +1,5 @@
 <?php
-    require '../config/function.php';
+    require './config/function.php';
 
 
     if(isset($_POST['loginBtn']))
@@ -36,7 +36,7 @@
                             'email' => $row['email']
                         ];
 
-                        redirect('../admin/index.php', "Logged In Successfully");
+                        redirect('admin/index.php', "Logged In Successfully");
                     }
                     elseif($row['role'] == 'Client'){
                         
@@ -51,10 +51,13 @@
                     $_SESSION['loggedInUserRole'] = $row['role'];
                     $_SESSION['loggedInUser'] = [
                         'name' => $row['name'],
-                        'email' => $row['email']
+                        'email' => $row['email'],
+                        'phone_num' => $row['phone_num']
+                     
                     ];
+                    
 
-                    redirect('index.php', "Logged In Successfully");
+                    redirect('client/index.php', "Logged In Successfully");
                 }
                 else{
                     redirect('login.php', "Something Went Wrong");

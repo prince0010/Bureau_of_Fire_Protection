@@ -27,7 +27,7 @@
                 {
                     // Insiide of this function, pass this ($result) and get the data in MYSQLI_ASSOC or mysqli associate data 
                         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                    if($row['role'] == 'Admin')
+                    if($row['role'] == 'Employee')
                     { 
                         if($row['is_ban'] == 1)
                         {

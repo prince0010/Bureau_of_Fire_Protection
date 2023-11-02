@@ -5,7 +5,7 @@ include('inc/header.php');
 
 if(isset($_SESSION['auth']))
 {
-    redirect('index.php', 'You are already logged in,');
+    redirect('./client/index.php', 'You are already logged in,');
 }
 
 ?>
@@ -50,4 +50,4 @@ if(isset($_SESSION['auth']))
             </div>
         </div>
 
-<?php include('includes/footer.php')?>
+<?php include('./client/includes/footer.php')?>

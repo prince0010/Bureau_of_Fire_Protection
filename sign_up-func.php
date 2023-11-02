@@ -1,5 +1,5 @@
 <?php
-    require '../config/function.php';
+    require './config/function.php';
 
     if(isset($_POST['signupBtn'])){
 

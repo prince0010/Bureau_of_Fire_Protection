@@ -62,7 +62,17 @@ session_start();
         $result = mysqli_query($conn, $query);
         return $result;
     }
+    // Sellect from specific Table
+    function get($tableName, $id){
+            global $conn;
 
+            $table = validate($tableName);
+            $userID = validate($id);
+
+            $query = "SELECT * FROM $table WHERE id = '$userID' LIMIT 1";
+            $result = mysqli_query($conn, $query);
+            return $result;
+        }
 
     function checkParamId($paramTypeID)
     {

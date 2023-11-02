@@ -72,6 +72,10 @@ if(isset($_SESSION['auth']))
                                     <div class="mb-3">
                                         <button type= "submit" name = "signupBtn" class="btn btn-dark w-100"> Login </button>
                                     </div>
+
+                                    <div class="mb-3">
+                                        <a href="login.php">Already Have An Account?</a>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -80,4 +84,4 @@ if(isset($_SESSION['auth']))
             </div>
         </div>
 
-<?php include('includes/footer.php')?>
+<?php include('./client/includes/footer.php')?>

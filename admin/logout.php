@@ -6,7 +6,7 @@
    if(isset($_SESSION['auth'])){
 
     logoutSession();
-    redirect('../client/login.php', 'Logged Out Sucessfully.');
+    redirect('../login.php', 'Logged Out Sucessfully.');
 
    }
 ?>
