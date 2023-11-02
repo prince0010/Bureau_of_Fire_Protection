@@ -50,9 +50,11 @@
                     $_SESSION['auth'] = true;
                     $_SESSION['loggedInUserRole'] = $row['role'];
                     $_SESSION['loggedInUser'] = [
+                        'id' => $row['id'],
                         'name' => $row['name'],
                         'email' => $row['email'],
                         'phone_num' => $row['phone_num']
+                        
                      
                     ];
                     

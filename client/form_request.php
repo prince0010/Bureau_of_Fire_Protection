@@ -14,35 +14,72 @@ include('include/header.php'); ?>
                 <div class="card-body">
                     
                 <div id ="alertmessage">
-                            <?= alertMessage(); ?>
+                            <?= alertMessage(); 
+                            
+                            ?>
                         </div>
 
                 <form action="function.php" method = "POST">
                         <div class="row">
                         
                       
-            <input type="hidden" name = "settingID" value = "<?= $editserv['data']['id']; ?>" />
+            <input type="hidden" name = "form_id" />
             
-        <div class="col-md-6">
+                      <div class="col-md-6">
                         <div class="mb-3">
-                            <label >Name </label>
+                            <label > Name of Owner </label>
                             <input type="text" name = "name" class= "form-control" value = "<?=$_SESSION["loggedInUser"]['name'] ?>" autocomplete = "off">
                         </div>
                         </div>
-    
+
+                        <div class="col-md-6">
+                        <div class="mb-3">
+                            <label > Business Name </label>
+                            <input type="text" name = "name" class= "form-control" autocomplete = "off">
+                        </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                            <!-- Philippines Date Format -->
+                        <?php
+                        $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
+                        echo '<label> Date </label>';
+                        echo '<input type="date"  class = "form-control" value="' . $dt->format('Y-m-d') . '" autocomplete = "off"/>';
+                        ?>
+                            </div>
+                        </div>
+
                         <div class="col-md-6">
                         <div class="mb-3">
                             <label >Phone Number </label>
                             <input type="text" name = "phone" class= "form-control" value = "<?=$_SESSION["loggedInUser"]['phone_num'] ?>" autocomplete = "off" disabled>
                         </div>
-                        </div>
-    
+                    </div>
+                        
                         <div class="col-md-6">
                         <div class="mb-3">
-                            <label >Address </label>
-                            <input type="text" name = "address" class= "form-control" autocomplete = "off">
+                            <label> Upload Permit</label>
+                            <input type="file" name ="permit" class="form-control" >
                         </div>
                         </div>
+
+                        <div class="col-md-6">
+                      <div class="mb-3">
+                       <label> Remarks </label>
+                            <input type="text" name ="remarks" class="form-control" >
+                             </div>
+                       </div>
+                       
+                    
+                    <div class="col-md-6">
+                    <div class="mb-3">
+                        <label >Address </label>
+                        <input type="text" name = "address" class= "form-control" autocomplete = "off">
+                    </div>
+                    </div>
+                    
                         
                         <div class="col-md-6">
                         <div class="mb-3">
@@ -50,33 +87,13 @@ include('include/header.php'); ?>
                             <input type="text" name = "landmark" class= "form-control" autocomplete = "off">
                         </div>
                         </div>
-                        
-                        <div class="col-md-6">
-                        <div class="mb-3">
-                            <label >Remarks </label>
-                            <input type="text" name = "landmark" class= "form-control" autocomplete = "off">
-                        </div>
-                        </div>
-
-                        <div class="col-md-6">
-                        <div class="mb-3">
-                            <label >Business Receipt </label>
-                            <input type="text" name = "landmark" class= "form-control" autocomplete = "off">
-                        </div>
-                        </div>
-                        
-                        
-                        <div class="col-md-6">
-                        <div class="mb-3">
-                            <label >Business Name </label>
-                            <input type="text" name = "address" class= "form-control" autocomplete = "off">
-                        </div>
-                        </div>
+                      
+                      
                         
                     </div>
                     <div class="col-md-6">
                     <div class="mb-3">
-                        <button type = "submit" name = "addUser" class="btn btn-dark"> Save </button>
+                        <button type = "submit" name = "formRequest" class="btn btn-dark"> Save </button>
                 </div>
                     </div>
                         </div>
