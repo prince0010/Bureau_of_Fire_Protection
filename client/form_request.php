@@ -19,7 +19,7 @@ include('include/header.php'); ?>
                             ?>
                         </div>
 
-                <form action="function.php" method = "POST">
+                <form action="client_function.php" method = "POST" enctype="multipart/form-data">
                         <div class="row">
                         
                       <!-- ID OF EACH USERS -->
@@ -35,7 +35,7 @@ include('include/header.php'); ?>
                         <div class="col-md-6">
                         <div class="mb-3">
                             <label > Business Name </label>
-                            <input type="text" name = "name" class= "form-control" autocomplete = "off">
+                            <input type="text" name = "b_name" class= "form-control" autocomplete = "off">
                         </div>
                         </div>
 
@@ -46,7 +46,7 @@ include('include/header.php'); ?>
                         <?php
                         $dt = new DateTime("now", new DateTimeZone('Asia/Manila'));
                         echo '<label> Date </label>';
-                        echo '<input type="date"  class = "form-control" value="' . $dt->format('Y-m-d') . '" autocomplete = "off"/>';
+                        echo '<input type="date" name = "date" class = "form-control" value="' . $dt->format('Y-m-d') . '" autocomplete = "off"/>';
                         ?>
                             </div>
                         </div>
@@ -54,25 +54,25 @@ include('include/header.php'); ?>
                         <div class="col-md-6">
                         <div class="mb-3">
                             <label >Phone Number </label>
-                            <input type="text" name = "phone" class= "form-control" value = "<?=$_SESSION["loggedInUser"]['phone_num'] ?>" autocomplete = "off" disabled>
+                            <input type="text" name = "phone" class= "form-control" value = "<?=$_SESSION["loggedInUser"]['phone_num'] ?>" autocomplete = "off" readonly >
                         </div>
                     </div>
                         
                         <div class="col-md-6">
                         <div class="mb-3">
                             <label> Upload Permit</label>
-                            <input type="file" name ="permit" class="form-control" >
+                            <input type="file" name ="image" class="form-control" >
                         </div>
                         </div>
 
-                        <div class="col-md-6">
-                      <div class="mb-3">
-                       <label> Remarks </label>
-                            <input type="text" name ="remarks" class="form-control" >
-                             </div>
-                       </div>
-                       
                     
+                    <div class="col-md-6">
+                    <div class="mb-3">
+                        <label >Barangay </label>
+                        <input type="text" name = "barangay" class= "form-control" autocomplete = "off">
+                    </div>
+                    </div>
+
                     <div class="col-md-6">
                     <div class="mb-3">
                         <label >Address </label>
@@ -88,8 +88,6 @@ include('include/header.php'); ?>
                         </div>
                         </div>
                       
-                      
-                        
                     </div>
                     <div class="col-md-6">
                     <div class="mb-3">
