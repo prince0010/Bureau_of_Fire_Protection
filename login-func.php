@@ -38,13 +38,14 @@
 
                         redirect('admin/index.php', "Logged In Successfully");
                     }
-                    elseif($row['role'] == 'Client'){
-                        
-                        if($row['is_ban'] == 1)
-                        {
-                            redirect('login.php', "Your Account has been Banned.", 'danger');
-                        }
-                          // Authentication using SESSION
+                    // CLIENT 
+                    elseif($row['role'] == 'Client')
+                {
+                    if($row['is_ban'] == 1)
+                    {
+                        redirect('login.php', "Your Account has been Banned.", 'danger');
+                    }
+                      // Authentication using SESSION
                     // Checked if its logged in
                     // Logged in or 'auth' == true
                     $_SESSION['auth'] = true;
@@ -54,13 +55,34 @@
                         'name' => $row['name'],
                         'email' => $row['email'],
                         'phone_num' => $row['phone_num']
-                        
-                     
                     ];
                     
-
                     redirect('client/index.php', "Logged In Successfully");
                 }
+
+
+                // EMPLOYEE
+                elseif($row['role'] == 'Employee')
+                {
+                    if($row['is_ban'] == 1)
+                    {
+                        redirect('login.php', "Your Account has been Banned.", 'danger');
+                    }
+                      // Authentication using SESSION
+                    // Checked if its logged in
+                    // Logged in or 'auth' == true
+                    $_SESSION['auth'] = true;
+                    $_SESSION['loggedInUserRole'] = $row['role'];
+                    $_SESSION['loggedInUser'] = [
+                        'id' => $row['id'],
+                        'name' => $row['name'],
+                        'email' => $row['email'],
+                        'phone_num' => $row['phone_num']
+                    ];
+                    
+                    redirect('employee/index.php', "Logged In Successfully");
+                }
+
                 else{
                     redirect('login.php', "Something Went Wrong");
                 }
