@@ -8,9 +8,8 @@ include('include/header.php'); ?>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5> Services
-                    <a href="add_services.php" class="btn btn-dark float-end">Add Services</a>
-                    </h5>
+                    <h3> Requested Forms
+                    </h3>
                    
                 </div>
                 <div class="card-body">
@@ -27,9 +26,9 @@ include('include/header.php'); ?>
                                     <th class = "text-center">Phone Number</th>
                                     <th class = "text-center">Barangay</th>
                                     <th class = "text-center">Status</th>
-                                    <th class = "text-center">Action</th>
                                     <th class = "text-center">Location</th>
                                     <th class = "text-center">Remarks</th> 
+                                    <th class = "text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,15 +60,16 @@ include('include/header.php'); ?>
                                          }
                                        ?>
                             </td> 
-                          
-                            <td class = "text-center">
-                                        <a  href="edit_services.php?id=<?= $servicesItem['id']?>" class = "btn btn-success btn-sm">Edit</a>
-                                        <a href="delete_services.php?id=<?= $servicesItem['id']?>"
-                                         class = "btn btn-danger btn-sm mx-2 "
-                                         onclick = "return confirm('Are you sure you want to delete this data?')">Delete</a>
-                                    </td>
-                                    <td class = "text-center"><?= $servicesItem['landmark']?></td>
+                            <td class = "text-center"><?= $servicesItem['landmark']?></td>
                                     <td class = "text-center"><?= $servicesItem['remarks']?></td>
+                            <td class = "text-center">
+                                <a  href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
+                                        <a  href="edit_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-success btn-xs"><i style="font-size:17px" class="fa fa-edit"></i></a>
+                                        <a href="delete_request.php?id=<?= $servicesItem['id']?>"
+                                         class = "btn btn-danger btn-xs "
+                                         onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
+                                    </td>
+                                  
                                 </tr>
                            
                                                  <?php
