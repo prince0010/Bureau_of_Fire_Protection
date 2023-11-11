@@ -32,7 +32,7 @@ include('include/header.php');
             <div class="card">
                 <div class="card-header">
                     <h3> View Form
-                    <a href = "index.php" class = "btn btn-dark float-end"> Back </a>
+                    <a href = "index.php?=<?= $user['data']['id']?>" class = "btn btn-dark float-end"> Back </a>
                     </h3>
                     <hr class = "bg-dark">
                

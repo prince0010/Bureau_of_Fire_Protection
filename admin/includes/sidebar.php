@@ -49,7 +49,52 @@
           </a>
         </li>
 
-         
+          
+        <li class="nav-item">
+          <a class="nav-link  " href="inspection_order.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class = "fa fa-user-alt text-dark text-lg"></i>
+            </div>
+            <span class="nav-link-text ms-1">Inspectors Data</span>
+          </a>
+        </li>
+                   
+        <li class="nav-item">
+          <a class="nav-link  " href="inspector_panel.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class = "fa fa-map-marker text-dark text-lg"></i>
+            </div>
+            <span class="nav-link-text ms-1">Inspector Name</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link  " href="purpose_panel.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class = "fa fa-map-marker text-dark text-lg"></i>
+            </div>
+            <span class="nav-link-text ms-1">Purpose</span>
+          </a>
+        </li>
+     
+        <li class="nav-item">
+          <a class="nav-link" href="duration_panel.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class = "fa far fa-clock	 text-dark text-lg"></i>
+            </div>
+            <span class="nav-link-text ms-1">Duration</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="remarks_panel.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class = "fa far fa-comment	 text-dark text-lg"></i>
+            </div>
+            <span class="nav-link-text ms-1">Remarks</span>
+          </a>
+        </li>
+
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Setting</h6>
         </li>

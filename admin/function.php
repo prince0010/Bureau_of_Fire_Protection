@@ -1,7 +1,85 @@
 <?php
         require '../config/function.php';
 
-  
+        //Remarks
+
+         //Duration
+    if(isset($_POST['addRemarks'])){
+        $remarks = validate($_POST['remarks']);
+
+        $query = "INSERT INTO remarks (remarks) VALUES ('$remarks')";
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            redirect('remarks_panel.php', 'Remarks Data Successfully Updated');
+        }
+        else
+        {
+            redirect('add_remarks.php', 'Something Went Wrong!');
+
+        }
+    }
+
+        
+    //Duration
+    if(isset($_POST['addDuration'])){
+        $duration = validate($_POST['duration']);
+
+        $query = "INSERT INTO duration (duration) VALUES ('$duration')";
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            redirect('duration_panel.php', 'Duration Data Successfully Updated');
+        }
+        else
+        {
+            redirect('add_duration.php', 'Something Went Wrong!');
+
+        }
+    }
+
+
+    //purpose
+    if(isset($_POST['addpurpose'])){
+        $purpose = validate($_POST['purpose']);
+
+
+        $query = "INSERT INTO purpose (purpose) VALUES('$purpose')";
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            redirect('purpose_panel.php', 'Purpose Data Successfully Updated');
+        }
+        else
+        {
+            redirect('add_purpose.php', 'Something Went Wrong!');
+
+        }
+    }
+
+
+    // Inspector
+    if(isset($_POST['addInspector']))
+    {
+        $name = validate($_POST['name']);
+        $position = validate($_POST['position']);
+
+        $query = "INSERT INTO inspector_user (name, position) VALUES ('$name', '$position')";
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            redirect('inspector_panel.php', 'Inspector Data Successfully Updated');
+        }
+        else
+        {
+            redirect('add_inspector.php', 'Something Went Wrong!');
+
+        }
+    }
+
+
+
+
     //Save Settings
     if(isset($_POST['saveSettings']))
         {

@@ -7,9 +7,23 @@ include('include/header.php'); ?>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
+            <?php
+
+                $paraResult = checkParamId('id');
+                if(!is_numeric($paraResult)){
+                    echo "<h5>".$paraResult."</h5>";
+                    return false;
+                }
+
+                $editserv = getByID('request', $paraResult);
+                if($editserv){
+
+                    if($editserv['status'] == 200)
+                    {
+        ?>
                 <div class="card-header">
                     <h5> Comfirm Request
-                    <a href="index.php" class="btn btn-dark float-end">Back</a>
+                    <a href="index.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark float-end">Back</a>
                     </h5>
                    
                 </div>
@@ -20,22 +34,9 @@ include('include/header.php'); ?>
                         </div>
 
                         <!-- The enctype= "multipart/form-data main attribute to accept the upload image in form submit if not added this it means not uplaod any image -->
-                       <form action="function.php" method = "POST" enctype="multipart/form-data">
+                       <form enctype="multipart/form-data">
 
-                       <?php
-
-                        $paraResult = checkParamId('id');
-                        if(!is_numeric($paraResult)){
-                            echo "<h5>".$paraResult."</h5>";
-                            return false;
-                        }
-
-                        $editserv = getByID('request', $paraResult);
-                        if($editserv){
-
-                            if($editserv['status'] == 200)
-                            {
-                                ?>
+                      
 
                                 <input type="hidden" name = "request_Id" value = "<?= $editserv['data']['id']; ?>">
 
@@ -104,11 +105,22 @@ include('include/header.php'); ?>
                                         <label>Remarks</label>
                                         <input type="text" name = "name" value="<?= $editserv['data']['remarks']?>" required class="form-control" readonly>
                                     </div>
+
+                                    <!-- <div class="row">
+                                        <div class="col-md-4">
+                                            <label >Update Status</label>
+                                            <select name="status" class="form-select">
+                                            <option value="0">Pending Employee Check</option>
+                                            <option value="1">Admin Check</option>
+                                            <option value="2">Confirmed by Admin</option>
+                                            </select>
+                                        </div> -->
+                                    <!-- </div> -->
                                     <br />
-                                    <label> Confirmation for Admin Check? </label>
+                                    <label> Proceed to Inspection Order?  </label>
                                     <hr class = "bg-dark">
                                     <div class="mb-3">
-                                        <button type = "submit" name = "update_service" class="btn btn-dark" >Confirm</button>
+                                    <a href="inspection_order.php?id=<?= $editserv['data']['id']?>" class="btn btn-dark">Next</a>
                                     </div>
                         <?php
                             }
