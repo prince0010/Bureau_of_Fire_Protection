@@ -74,7 +74,7 @@ include('includes/header.php'); ?>
                                         <select name="role" id="" class="form-control"  >
                                             <option value="" disabled>-- Select Role -- </option>
                                             <option value= "Admin" <?=$user['data']['role'] == 'Admin' ? 'selected' : ' ';?> >Admin</option>
-                                            <option value= "Client" <?=$user['data']['role'] == 'Client' ? 'selected' : ' ';?> >Client</option>
+                                            <option value= "Employee" <?=$user['data']['role'] == 'Employee' ? 'selected' : ' ';?> >Employee</option>
                                         </select>
                                     </div>
                                 </div>

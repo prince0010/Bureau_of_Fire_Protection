@@ -1,6 +1,146 @@
 <?php
         require '../config/function.php';
 
+    //Remarks
+    if(isset($_POST['updateRemarks'])){
+        $remarks = validate($_POST['remarks']);
+
+        $id = validate($_POST['remarksId']);
+
+          // VERIFICATION AND CHECKING
+        // Checking if the ID is existed or created and if not then it will display the status 404 or 500 in this function thartt you can find in config/function.php
+        // Database TableName of the specific ID that you want to check if its existed or created and the ID
+        $userID = getByID('remarks', $id);
+        // If the status is not equals to 200 that you can find in this getByID function in config/function.php
+        if($userID['status'] != 200) {
+            redirect('edit_remarks.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
+        }
+        if($remarks != '')
+        {
+            $query = "UPDATE remarks SET 
+            remarks = '$remarks'
+            WHERE id = '$id' ";
+
+            $result = mysqli_query($conn, $query);
+            if($result)
+            {
+                redirect('remarks_panel.php?id='.$id, 'Remarks Data Updated Successfully');
+            }
+            else{
+                redirect('edit_remarks.php', 'Something Went Wrong. ', 'danger');
+            }
+        }
+        else{
+                redirect('edit_remarks.php', 'Please fill up all the Input Field', 'danger');
+        }
+    }
+
+    // duration
+    if(isset($_POST['updateDuration'])){
+        $duration = validate($_POST['duration']);
+
+        $id = validate($_POST['durationId']);
+
+        // VERIFICATION AND CHECKING
+        // Checking if the ID is existed or created and if not then it will display the status 404 or 500 in this function thartt you can find in config/function.php
+        // Database TableName of the specific ID that you want to check if its existed or created and the ID
+        $userID = getByID('duration', $id);
+        // If the status is not equals to 200 that you can find in this getByID function in config/function.php
+        if($userID['status'] != 200) {
+            redirect('edit_duration.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
+        }
+        if($duration != '')
+        {
+            $query = "UPDATE duration SET 
+            duration = '$duration'
+            WHERE id = '$id' ";
+
+            $result = mysqli_query($conn, $query);
+            if($result)
+            {
+                redirect('duration_panel.php?id='.$id, 'Duration Data Updated Successfully');
+            }
+            else{
+                redirect('edit_duration.php', 'Something Went Wrong. ', 'danger');
+            }
+        }
+        else{
+                redirect('edit_duration.php', 'Please fill up all the Input Field', 'danger');
+        }
+    }
+
+
+    // Purpose
+    if(isset($_POST['editPurpose'])){
+        $purpose = validate($_POST['purpose']);
+
+        $id = validate($_POST['purposeId']);
+          // VERIFICATION AND CHECKING
+        // Checking if the ID is existed or created and if not then it will display the status 404 or 500 in this function thartt you can find in config/function.php
+        // Database TableName of the specific ID that you want to check if its existed or created and the ID
+        $userID = getByID('purpose', $id);
+        // If the status is not equals to 200 that you can find in this getByID function in config/function.php
+        if($userID['status'] != 200) {
+            redirect('edit_purpose.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
+        }
+        if($purpose != '')
+        {
+            $query = "UPDATE purpose SET 
+            purpose = '$purpose'
+            WHERE id = '$id' ";
+
+            $result = mysqli_query($conn, $query);
+
+            if($result)
+            {
+                redirect('purpose_panel.php?id='.$id, 'Purpose Data Updated Successfully');
+            }
+            else{
+                redirect('edit_purpose.php', 'Something Went Wrong. ', 'danger');
+            }
+        }
+        else{
+                redirect('edit_purpose.php', 'Please fill up all the Input Field', 'danger');
+        }
+    }
+        
+    // Update Inspector
+    if(isset($_POST['updateInspector'])){
+        $name = validate($_POST['name']);
+        $position = validate($_POST['position']);
+       
+        $id = validate($_POST['inspectorId']);
+        // VERIFICATION AND CHECKING
+        // Checking if the ID is existed or created and if not then it will display the status 404 or 500 in this function thartt you can find in config/function.php
+        // Database TableName of the specific ID that you want to check if its existed or created and the ID
+        $userID = getByID('inspector_user', $id);
+        // If the status is not equals to 200 that you can find in this getByID function in config/function.php
+        if($userID['status'] != 200) {
+            redirect('edit_inspector.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
+        }
+        if($name != '' && $position != '')
+        {
+            $query = "UPDATE inspector_user SET 
+            name = '$name', 
+            position = '$position'
+            WHERE id = '$id' ";
+
+            $result = mysqli_query($conn, $query);
+
+            if($result)
+            {
+                redirect('inspector_panel.php?id='.$id, 'Inspector Data Updated Successfully');
+            }
+            else{
+                redirect('edit_inspector.php', 'Something Went Wrong. ', 'danger');
+            }
+        }
+        else{
+                redirect('edit_inspector.php', 'Please fill up all the Input Field', 'danger');
+        }
+    }
+
+      
         //Remarks
 
          //Duration
