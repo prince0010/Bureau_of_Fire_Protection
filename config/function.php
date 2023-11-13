@@ -40,6 +40,19 @@ session_start();
 
     }
 
+        // Admin Count
+    function getCount($tableName){
+        global $conn;
+
+
+        $table = validate($tableName);
+        $query = "SELECT * FROM $table";
+        $result = mysqli_query($conn, $query);
+        $totalCount = mysqli_num_rows($result);
+        return $totalCount;
+
+    }
+
     function alertMessage()
     {
         if(isset($_SESSION['status']))

@@ -363,7 +363,7 @@
 
             if($result)
             {
-                redirect('edit_users.php?id='.$id, 'User/Admin Updated Successfully');
+                redirect('users.php?id='.$id, 'User/Admin Updated Successfully');
             }
             else{
                 redirect('edit_users.php', 'Something Went Wrong. ', 'danger');

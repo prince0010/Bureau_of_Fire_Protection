@@ -8,11 +8,14 @@ include('includes/header.php'); ?>
                 
     <div class="col-md-12">
             <div class="card">
+             
+        <div class="col-md-12">
+            <div class="card">
                 <div class="card-header">
-                    <h5> User List
-                   <a href="add_users.php" class="btn btn-dark float-end">Add User</a>
+                    <h5> Services
+                    <a href="add_services.php" class="btn btn-dark float-end">Add Services</a>
                     </h5>
-                    <div class="col-md-7">
+                      <div class="col-md-7">
             <form action="" method = "GET">
                 <div class="row">
                     <div class="col-md-4">
@@ -33,15 +36,6 @@ include('includes/header.php'); ?>
                 </div>
             </form>
         </div>
-                </div>
-                
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5> Services
-                    <a href="add_services.php" class="btn btn-dark float-end">Add Services</a>
-                    </h5>
-                   
                 </div>
                 <div class="card-body">
 

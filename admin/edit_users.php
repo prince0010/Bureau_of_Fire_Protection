@@ -3,8 +3,6 @@ $pageTitle = 'BFP || Edit User';
 include('includes/header.php'); ?>
 
 
-
-
 <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -68,6 +66,14 @@ include('includes/header.php'); ?>
                                         <input type="text" value =<?=$user['data']['phone_num'];?> name = "phone" class= "form-control" required>
                                     </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                            <div class="mb-3">
+                                <label >Address </label>
+                                <input type="text" value =<?=$user['data']['address'];?> name = "address" class= "form-control">
+                            </div>
+                            </div>
+
                                     <div class="col-md-6">
                                     <div class="mb-5">
                                         <label >Select Role </label>
@@ -82,18 +88,16 @@ include('includes/header.php'); ?>
                                 <div class="mb-3">
                                     <label >Is Ban </label>
                                     <br />
-                                    <input type="checkbox"  <?=$user['data']['is_ban'] == true ? 'checked' : ' ' ;?> name = "is_ban" style = "width:30px;height:30px;">
+                                    <input type="checkbox"  <?=$user['data']['is_ban'] == true ? 'checked' : '' ;?> name = "is_ban" style = "width:30px;height:30px;">
                                 </div>
                                 </div>
                                 
-                                <div class="col-md-6">
+                                    </div>
+                                    <div class="col-md-6">
                                 <div class="mb-3">
                                     <button type = "submit" name = "updateUser" class="btn btn-dark"> Update </button>
                             </div>
                                 </div>
-                                
-                                    </div>
-                
                         </div>
                                 
                                 <?php

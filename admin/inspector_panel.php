@@ -11,11 +11,9 @@ include('includes/header.php'); ?>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-              
                     <h5> Inspector Name
                     <a href="add_inspector.php" class="btn btn-dark float-end">Add Inspector</a>
                     </h5>
-                    
                 </div>
                 <div class="card-body">
 
