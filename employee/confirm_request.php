@@ -120,7 +120,7 @@ include('include/header.php'); ?>
                                     <label> Proceed to Inspection Order?  </label>
                                     <hr class = "bg-dark">
                                     <div class="mb-3">
-                                    <a href="inspection_order.php?id=<?= $editserv['data']['id']?>" class="btn btn-dark">Next</a>
+                                    <a href="sms_notification.php?id=<?= $editserv['data']['id']?>" class="btn btn-dark">Next</a>
                                     </div>
                         <?php
                             }

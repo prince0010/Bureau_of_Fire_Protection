@@ -97,6 +97,7 @@
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
   <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>

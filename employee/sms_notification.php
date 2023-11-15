@@ -24,7 +24,7 @@
 
                 <div class="card-header">
                     <h5> Inspection Order
-                    <a href="confirm_request.php" class="btn btn-dark float-end">Back</a>
+                    <a href="confirm_request.php?id=<?= $editserv['data']['id'];?>" class="btn btn-dark float-end">Back</a>
                     </h5>
                    
                 </div>
@@ -33,15 +33,28 @@
                 <div id ="alertmessage">
                             <?= alertMessage(); ?>
                         </div>
-                        <form action="function.php" method = "POST" enctype="multipart/form-data">
+
+                        <form action="sms_function.php" method = "POST" enctype="multipart/form-data">
                         
                         <div class="mb-3">
-                                      
+                        <input type="hidden" name = "request_Id" value = "<?= $editserv['data']['id']; ?>">
+                        
+                        <label> Phone Number </label>
+                        <select name="status" id="" class = "form-control" readonly>
+                            <option value="phone_num" ><?= $editserv['data']['phone_num']; ?></option>
+                        </select>
+
                                     <div class="mb-3">
-                                        <label>Proceed</label>
-                                        <textarea name="proceed" id="" cols="30" rows="10" class = "form-control"></textarea>
+                                        <label>Message</label>
+                                        <textarea name="proceed" cols="30" rows="10" class = "form-control">
+                                        </textarea>
                                     </div>
-                                    
+
+                                    <label> Proceed to Inspection Order? </label>
+                                    <hr class = "bg-dark">
+                                    <div class="mb-3">
+                                <button type="submit" name = "sendBtn" class = "btn btn-dark"> Send </button>
+                                    </div>
                                     <?php
                             }
                                 else{
