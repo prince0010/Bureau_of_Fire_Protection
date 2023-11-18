@@ -51,10 +51,10 @@ if(isset($_SESSION['auth']))
                                         <input type="password" name = "password" placeholder = "Enter Your Password" class="form-control">
                                     </div>
                                   
-                                    <!-- <div class="mb-3">
+                                    <div class="mb-3">
                                         <label for=""> Confirm Password</label>
                                         <input type="password" name = "confpassword" placeholder = "Enter to Confirm Password" class="form-control">
-                                    </div> -->
+                                    </div>
                                       
                                     <div class="mb-3">
                                     <label hidden="hidden"> Role </label>

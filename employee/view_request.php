@@ -90,13 +90,13 @@ include('include/header.php');
                             </button>
                         <!-- Modal -->
                         <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog ">
                             <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="ModalLabel">Upload Permit</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" >
                             <img src="<?= './'.$user['data']['upload_permit'] ?>" style = "width:100%;height:100%;" alt="Image"/>
                             </div>
                             <div class="modal-footer">

@@ -12,12 +12,19 @@
 
         if($email != '' && $password != '')
         {
-            $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password' LIMIT 1";
+            // $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password' LIMIT 1";
+            $query = "SELECT * FROM user WHERE email = '$email' LIMIT 1";
             $result = mysqli_query($conn, $query);
             if($result)
             {
                 if(mysqli_num_rows($result) == 1)
                 {
+
+                    $hashedPassword = $row['password'];
+                    if(password_verify($password, $hashedPassword)){
+                        redirect('login.php', "Invalid Password", 'danger');
+                    }
+
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     if($row['role'] == 'Admin')
                     {
@@ -89,7 +96,7 @@
                 }
                 else
                 {
-                    redirect('login.php', "Invalid Email or Password", 'danger');
+                    redirect('login.php', "Email Doesn't Exist! Create an Account!", 'danger');
                 }
             }
         }

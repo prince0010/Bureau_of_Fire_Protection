@@ -9,6 +9,7 @@
 
         $emailInput = validate($_POST['email']);
         $passwordInput = validate($_POST['password']);
+        $confirmPassword = validate($_POST['confpassword']);
 
         $is_ban = validate($_POST['is_ban']) == true ? 1 : 0 ;
         $role = validate($_POST['role']);
@@ -16,6 +17,8 @@
         // FILTERED EMAIL AND PASSWORD
         $email = filter_var($emailInput, FILTER_SANITIZE_EMAIL);
         $password = filter_var($passwordInput, FILTER_SANITIZE_STRING);
+        if($password == $confirmPassword){
+
         
         if($name != '' && $phone_num != '' && $address != '' && $email != '' && $password != '')
         {
@@ -33,7 +36,10 @@
         else{
             redirect('sign_up.php', "Please Fill Up Properly", "danger");
         }
-
+    }
+    else{
+        redirect('sign_up.php', "Does not Match the Password", "danger");
+    }
     }
 
 

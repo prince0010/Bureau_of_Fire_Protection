@@ -306,9 +306,10 @@
 
         if($name != '' && $email != '' && $password != '' && $phone != '' && $address != '')
         {
-            
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
             $query = "INSERT INTO user(name, phone_num, address, email, password, is_ban, role) 
-            VALUES ('$name',' $phone', '$address' ,'$email','$password','$is_ban','$role')";
+            VALUES ('$name',' $phone', '$address' ,'$email','$hashedPassword','$is_ban','$role')";
             $result = mysqli_query($conn, $query);
 
             if($result)
@@ -349,12 +350,14 @@
         }
         if($name != '' && $email != '' && $password != '' && $phone != '' && $address != '')
         {
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
             $query = "UPDATE user SET 
             name = '$name', 
             phone_num = '$phone',
             address = '$address', 
             email = '$email', 
-            password = '$password', 
+            password = '$hashedPassword', 
             is_ban = '$is_ban', 
             role = '$role'
             WHERE id = '$id' ";

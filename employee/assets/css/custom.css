@@ -2,3 +2,6 @@
     margin-right: 20rem !important;
     margin-left: 27.70rem !important;
   }
+.white-space{
+  text-overflow: ellipsis;
+}

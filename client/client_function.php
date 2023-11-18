@@ -79,7 +79,7 @@
             // Move the uploaded images in the $path
             move_uploaded_file($_FILES['image']['tmp_name'], $path.$filename);
         }
-            redirect('form_request.php', 'Form Request Added Successfully ');
+            redirect('index.php', 'Form Request Added Successfully ');
 
         }
         else{

@@ -13,7 +13,8 @@ $client->messages->create(
     'DESTINATION_PHONE_NUMBER',
     array(
         "from" => $twilio_phone_number,
-        "body" => "Whaddup from PHP!"
+        "body" => "Hi, This is Bureau of Fire Protection. We want to remind you that the processing for 
+        "
     )
 );
 
