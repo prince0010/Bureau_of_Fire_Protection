@@ -1,6 +1,25 @@
 <?php
         require '../config/function.php';
 
+    //Message
+    if(isset($_POST['msgSave'])){
+        $message = validate($_POST['message']);
+        $status = validate($_POST['status']);
+
+        $query = "INSERT INTO message (message, status) VALUES ('$message', '$status')";
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            redirect('message_panel.php', 'SMS Message Data Successfully Updated');
+        }
+        else
+        {
+            redirect('add_smsmessage.php', 'Something Went Wrong!');
+
+        }
+    }
+
+
     //Remarks
     if(isset($_POST['updateRemarks'])){
         $remarks = validate($_POST['remarks']);

@@ -43,22 +43,21 @@
                         <select name="status" id="" class = "form-control" readonly>
                             <option value="phone_num" ><?= $editserv['data']['phone_num']; ?></option>
                         </select>
-                        
+
                         <br />
 
                       <div class="mb-3">
 
-                    <label>Choose what will the status of the text that they'll Receive.</label>
-
-                    <select name="message_status" id="" class = "form-control" readonly>
-                            <option value="Accepted">Accepted</option>
-                            <option value="Denied" >Denied</option>
-                        </select>
-
+                    
                         <br />
                 <label>Message</label>
-                     <textarea name="proceed" cols="30" rows="10" class = "form-control" readonly>  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is Bureau of Fire Protection, we want to Inform you that we're in processing in creating an Inspection Order for your Request and it would take 2-3 days to fully finished it. Thank you for your patience.
-                                        </textarea>
+                <select name="message_status" id="" class = "form-control text-wrap" style ="height:180px" readonly>
+                        <option disabled > ---- Accepted ----</option>
+                            <option value="Accepted"> Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is Bureau of Fire Protection, we want to Inform you that we're in processing in creating an Inspection Order for your Request and it would take 2-3 days to fully finished it. Thank you for your patience.</option>
+                            <option disabled > ---- Denied ----</option>
+                            <option value="Denied" >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. We'll re-check it again.</option>
+                        </select>
+
                                         
                                     </div>
 
