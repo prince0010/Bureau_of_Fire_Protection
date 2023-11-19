@@ -62,6 +62,7 @@ include('includes/header.php'); ?>
                                     <option value="" disabled>-- Select Role -- </option>
                                     <option value= "Admin"> Admin</option>
                                     <option value= "Employee"> Employee</option>
+                                    <option value= "Client"> Client</option>
                                 </select>
                             </div>
                         </div>

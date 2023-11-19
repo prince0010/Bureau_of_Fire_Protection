@@ -18,11 +18,14 @@
         $email = filter_var($emailInput, FILTER_SANITIZE_EMAIL);
         $password = filter_var($passwordInput, FILTER_SANITIZE_STRING);
         if($password == $confirmPassword){
-
+            
+         
         
         if($name != '' && $phone_num != '' && $address != '' && $email != '' && $password != '')
         {
-            $query = "INSERT INTO user(name, phone_num, address, email, password, is_ban, role) VALUES ('$name', '$phone_num','$address','$email', '$password','$is_ban','$role')";
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            
+            $query = "INSERT INTO user(name, phone_num, address, email, password, is_ban, role) VALUES ('$name', '$phone_num','$address','$email', '$hashedPassword','$is_ban','$role')";
             $result = mysqli_query($conn, $query);
 
             if($result)
