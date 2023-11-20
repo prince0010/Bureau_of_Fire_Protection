@@ -7,26 +7,10 @@
 <div class="row">
         <div class="col-md-12">
             <div class="card">
-                            <?php
-
-                $paraResult = checkParamId('id');
-                if(!is_numeric($paraResult)){
-                    echo "<h5>".$paraResult."</h5>";
-                    return false;
-                }
-
-                $editserv = getByID('request', $paraResult);
-                if($editserv){
-
-                    if($editserv['status'] == 200)
-                    {
-                        ?>
-
                 <div class="card-header">
                     <h5> Inspection Order
-                    <a href="confirm_request.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark float-end">Back</a>
+                    <a href="index.php" class="btn btn-dark float-end">Back</a>
                     </h5>
-                   
                 </div>
                 <div class="card-body">
                     <!-- Alert -->
@@ -39,7 +23,7 @@
                                         <label>To</label>
                                         <select name="" id="" class="form-control">
                                             <option value=""></option>
-                                            <option value="">Mr. Tan</option>
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                     
@@ -71,17 +55,8 @@
                                             <option value="">Mr. Tan</option>
                                         </select>
                                     </div>
-                                    <?php
-                            }
-                                else{
-                                    echo "<h5> No Such Data Found! </h5>";
-                                }
-                        }
-                        else{
-                            echo "<h5> Something Went Wrong! </h5>";
-                        }
-
-                       ?>
+                                    
+                                   
                         </form>
 
 

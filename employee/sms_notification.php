@@ -23,7 +23,7 @@
                         ?>
 
                 <div class="card-header">
-                    <h5> Inspection Order
+                    <h5> Send Message
                     <a href="confirm_request.php?id=<?= $editserv['data']['id'];?>" class="btn btn-dark float-end">Back</a>
                     </h5>
                    
@@ -53,7 +53,7 @@
                         <option disabled > ---- Accepted ----</option>
                             <option value="Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is Bureau of Fire Protection, we want to Inform you that we're in processing in creating an Inspection Order for your Request and it would take 2-3 days to fully finished it. Thank you for your patience."> Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is Bureau of Fire Protection, we want to Inform you that we're in processing in creating an Inspection Order for your Request and it would take 2-3 days to fully finished it. Thank you for your patience.</option>
                             <option disabled > ---- Denied ----</option>
-                            <option value="Denied" >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. We'll re-check it again.</option>
+                            <option value=" Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. We'll re-check it again." >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. We'll re-check it again.</option>
                         </select>
                                     </div>
 

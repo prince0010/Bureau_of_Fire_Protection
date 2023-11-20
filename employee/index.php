@@ -21,6 +21,7 @@ include('include/header.php'); ?>
                         <table id = "myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    <th class = "text-center">Date</th>
                                     <th class = "text-center">Name</th>
                                     <th class = "text-center">Business Name</th>
                                     <th class = "text-center">Phone Number</th>
@@ -43,6 +44,7 @@ include('include/header.php'); ?>
                                             {
                                                 ?>
                                            <tr>
+                                            <td class = "text-center"> <?= $servicesItem['date']?> </td>
                                             <td class = "text-center"> <?= $servicesItem['owner_name']?> </td>
                                             <td class = "text-center"><?= $servicesItem['business_name']?></td>
                                             <td class = "text-center"><?= $servicesItem['phone_num']?></td>
@@ -50,13 +52,13 @@ include('include/header.php'); ?>
                                             <td class = "text-center">
                             <?php
                                   if($servicesItem['status'] == 1){
-                                     echo '<span class = "badge bg-sucess text-white"> Pending for Admin Check </span>';
+                                     echo '<span class = "badge bg-sucess text-white"> Pending for  Admin Check </span>';
                                      }
                                  elseif($servicesItem['status'] == 2){
-                                    echo '<span class = "badge bg-success text-white"> Confirmed to Admin </span>';
+                                    echo '<span class = "badge bg-success text-white"> Confirmed by Admin </span>';
                                      }
                                      else{
-                                        echo '<span class = "badge bg-success text-white"> Pending for Employee Check </span>';
+                                        echo '<span class = "badge bg-success text-white"> Pending for <br /> Employee Check </span>';
                                          }
                                        ?>
                             </td> 
