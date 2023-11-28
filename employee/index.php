@@ -10,14 +10,11 @@ include('include/header.php'); ?>
                 <div class="card-header">
                     <h3> Requested Forms
                     </h3>
-                   
                 </div>
                 <div class="card-body">
-
                 <div id ="alertmessage">
                             <?= alertMessage(); ?>
                         </div>
-
                         <table id = "myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -32,6 +29,7 @@ include('include/header.php'); ?>
                                     <th class = "text-center">Action</th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
                             <?php
                                    $services = getAll('request');
@@ -71,29 +69,22 @@ include('include/header.php'); ?>
                                          class = "btn btn-danger btn-xs "
                                          onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
                                     </td>
-                                  
                                 </tr>
-                           
                                                  <?php
                                                
                                             }
-                                            
                                    }
                                 }
                                    else{
                                     ?>
                                         <td cosplan = "4" >No Record Found</td>
                                     <?php
-
                                    }
-
                                 ?>
-                         
                             </tbody>
-                    
                         </table>
-                </div>
-            </div>
+                        </div>
+                            </div>
         </div>
     </div>
 
