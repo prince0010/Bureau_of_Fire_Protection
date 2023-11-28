@@ -23,10 +23,10 @@ include('include/header.php');
                         <select name="" id="" class="form-control">
                             <?php
 
-                            $query = "SELECT * FROM inspection_order";
-                            $query_run = mysqli_query($conn, $query);
-                            if (mysqli_num_rows($query_run) > 0) {
-                                foreach ($query_run as $row) {
+                            $inspec = "SELECT * FROM inspection_order";
+                            $inspec_run = mysqli_query($conn, $inspec);
+                            if (mysqli_num_rows($inspec_run) > 0) {
+                                foreach ($inspec_run as $row) {
                             ?>
                                     <option value="<?= $row['id']; ?>"><?= $row['to']; ?></option>
                                 <?php
@@ -55,7 +55,6 @@ include('include/header.php');
                             ?>
                         </select>
                     </div>
-
                     <div class="mb-3">
                         <label>Duration</label>
                         <select name="duration" id="" class="form-control">
@@ -69,7 +68,7 @@ include('include/header.php');
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label>Remarks or Additional Instruction</label>
+                        <label>Remarks or Additional Instruction </label>
                         <select name="remarks" id="" class="form-control">
                             <?php
                                 foreach ($query_run as $row) {
@@ -88,12 +87,11 @@ include('include/header.php');
 
                             } else {
                 ?>
-                    <option value=""> No Record Found</option>
+                    <option value=""> No Record Found </option>
                 <?php
                             }
                 ?>
                 </form>
-
 
             </div>
         </div>

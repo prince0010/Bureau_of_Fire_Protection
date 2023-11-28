@@ -64,7 +64,7 @@ include('include/header.php'); ?>
                                     <td class = "text-center"><?= $servicesItem['remarks']?></td>
                             <td class = "text-center"> 
                                 <a  href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
-                                        <a  href="confirm_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-success btn-xs" name = "confirmBtn"><i style="font-size:17px" class="fa fa-check"></i></a>
+                                        <a href="confirm_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-success btn-xs" name = "confirmBtn"><i style="font-size:17px" class="fa fa-check"></i></a>
                                         <a href="delete_request.php?id=<?= $servicesItem['id']?>"
                                          class = "btn btn-danger btn-xs "
                                          onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
