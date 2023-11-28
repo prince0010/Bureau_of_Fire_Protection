@@ -118,7 +118,7 @@ include('include/header.php'); ?>
                             <hr class="bg-dark">
                             <div class="mb-3">
                                 <?php
-                                if ($editserv['data']['msg_send'] != 1) {
+                                if ($editserv['data']['msg_send'] == 0) {
                                 ?>
                                     <a href="sms_notification.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark">Next</a>
                                 <?php
