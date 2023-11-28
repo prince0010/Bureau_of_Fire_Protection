@@ -103,28 +103,18 @@ include('include/header.php'); ?>
                                 <input type="text" name="name" value="<?= $editserv['data']['remarks'] ?>" required class="form-control" readonly>
                             </div>
 
-                            <!-- <div class="row">
-                                        <div class="col-md-4">
-                                            <label >Update Status</label>
-                                            <select name="status" class="form-select">
-                                            <option value="0">Pending Employee Check</option>
-                                            <option value="1">Admin Check</option>
-                                            <option value="2">Confirmed by Admin</option>
-                                            </select>
-                                        </div> -->
-                            <!-- </div> -->
                             <br />
                             <label> Proceed to Inspection Order? </label>
                             <hr class="bg-dark">
                             <div class="mb-3">
                                 <?php
-                                if ($editserv['data']['msg_send'] != 1) {
+                                if ($editserv['data']['msg_send'] == 0) {
                                 ?>
                                     <a href="sms_notification.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark">Next</a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="inspection_order.php" class="btn btn-dark">Next</a>s
+                                    <a href="inspection_order.php" class="btn btn-dark">Next</a>
                                 <?php
                                 }
                                 ?>
