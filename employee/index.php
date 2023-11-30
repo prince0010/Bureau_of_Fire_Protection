@@ -50,10 +50,10 @@ include('include/header.php'); ?>
                                             <td class = "text-center">
                             <?php
                                   if($servicesItem['status'] == 1){
-                                     echo '<span class = "badge bg-sucess text-white"> Pending for  Admin Check </span>';
+                                     echo '<span class = "badge bg-success text-white"> Pending for <br />  Admin Check </span>';
                                      }
                                  elseif($servicesItem['status'] == 2){
-                                    echo '<span class = "badge bg-success text-white"> Confirmed by Admin </span>';
+                                    echo '<span class = "badge bg-success text-white"> Confirmed by <br /> Admin </span>';
                                      }
                                      else{
                                         echo '<span class = "badge bg-success text-white"> Pending for <br /> Employee Check </span>';

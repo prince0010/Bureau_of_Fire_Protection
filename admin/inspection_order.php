@@ -34,8 +34,6 @@ include('includes/header.php'); ?>
             </form>
         </div>
                     </h5>
-                   
-                    
                 </div>
                 <div class="card-body">
 
@@ -66,9 +64,9 @@ include('includes/header.php'); ?>
                                             {
                                                 ?>
                                            <tr>
-                                            <td class = "text-center"><?= $servicesItem['to']?> </span></td>
-                                            <td class = "text-center"><?= $servicesItem['proceed']?> </span></td>
-                                            <td class = "text-center"><?= $servicesItem['purpose']?> </span></td>
+                                            <td class = "text-center"><?= $servicesItem['inspection_name']?> </span></td>
+                                            <td class = "text-center"><?= $servicesItem['proceed_info']?> </span></td>
+                                            <td class = "text-center"><?= $servicesItem['purpose_info']?> </span></td>
                                             <td class = "text-center"><?= $servicesItem['duration']?> </span></td>
                                             <td class = "text-center"><?= $servicesItem['remarks']?> </span></td>
                                            <!--   <td class = "text-center">

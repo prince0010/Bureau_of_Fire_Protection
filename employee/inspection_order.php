@@ -20,17 +20,17 @@ include('include/header.php');
                 <form action="function.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label>To</label>
-                        <select name="" id="" class="form-control">
+                        <select name="inspector_name" id="" class="form-control">
                             <?php
 
-                            $inspec = "SELECT * FROM inspection_order";
+                            $inspec = "SELECT * FROM inspector_user
+                            ";
                             $inspec_run = mysqli_query($conn, $inspec);
                             if (mysqli_num_rows($inspec_run) > 0) {
                                 foreach ($inspec_run as $row) {
                             ?>
-                                    <option value="<?= $row['id']; ?>"><?= $row['to']; ?></option>
+                                    <option value="<?= $row['name']; ?>" ><?= $row['name']; ?></option>
                                 <?php
-
                                 }
                                 ?>
                         </select>
@@ -46,11 +46,15 @@ include('include/header.php');
                         <label>Purpose</label>
                         <select name="purpose" id="" class="form-control">
                             <?php
-                                foreach ($query_run as $row) {
-                            ?>
-                                <option value="<?= $row['id']; ?>"><?= $row['purpose']; ?></option>
-                            <?php
 
+                                $inspec = "SELECT * FROM purpose ";
+                                $inspec_run = mysqli_query($conn, $inspec);
+                                if (mysqli_num_rows($inspec_run) > 0) {
+                                    foreach ($inspec_run as $row) {
+                            ?>
+                                    <option value="<?= $row['purpose']; ?>"><?= $row['purpose']; ?></option>
+                            <?php
+                                    }
                                 }
                             ?>
                         </select>
@@ -59,10 +63,14 @@ include('include/header.php');
                         <label>Duration</label>
                         <select name="duration" id="" class="form-control">
                             <?php
-                                foreach ($query_run as $row) {
+                                $inspec = "SELECT * FROM duration ";
+                                $inspec_run = mysqli_query($conn, $inspec);
+                                if (mysqli_num_rows($inspec_run) > 0) {
+                                    foreach ($inspec_run as $row) {
                             ?>
-                                <option value="<?= $row['id']; ?>"><?= $row['duration']; ?></option>
+                                    <option value="<?= $row['duration']; ?>"><?= $row['duration']; ?></option>
                             <?php
+                                    }
                                 }
                             ?>
                         </select>
@@ -70,18 +78,22 @@ include('include/header.php');
                     <div class="mb-3">
                         <label>Remarks or Additional Instruction </label>
                         <select name="remarks" id="" class="form-control">
-                            <?php
-                                foreach ($query_run as $row) {
+                        <?php
+                                $inspec = "SELECT * FROM remarks ";
+                                $inspec_run = mysqli_query($conn, $inspec);
+                                if (mysqli_num_rows($inspec_run) > 0) {
+                                    foreach ($inspec_run as $row) {
                             ?>
-                                <option value="<?= $row['id']; ?>"><?= $row['remarks']; ?></option>
+                                    <option value="<?= $row['remarks']; ?>"><?= $row['remarks']; ?></option>
                             <?php
+                                    }
                                 }
                             ?>
                         </select>
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-dark"> Save </button>
+                        <button type="submit" name = "inspecSave" class="btn btn-dark"> Save </button>
                     </div>
                 <?php
 
