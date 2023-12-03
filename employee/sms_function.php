@@ -10,15 +10,14 @@ use Infobip\Model\SmsAdvancedTextualRequest;
 require __DIR__ . "/vendor/autoload.php";
 
 
-
 // echo "Message sent.";
-
 
 if (isset($_POST['sendBtn'])) {
     $req_id = validate($_POST['request_Id']);
 
     $number = $_POST['phone_num'];
     $smsessage = $_POST['message_status'];
+   
 
     if ($_POST["provider"] === "infobip") {
 
@@ -35,14 +34,14 @@ if (isset($_POST['sendBtn'])) {
         $message = new SmsTextualMessage(
             destinations: [$destination],
             text: $smsessage,
-            from: "bfp"
+            from:'BFP'
         );
 
         $request = new SmsAdvancedTextualRequest(messages: [$message]);
 
         $response = $api->sendSmsMessage($request);
     }
-    $query = "UPDATE request SET
+        $query = "UPDATE request SET
         msg_send = '1',
         status = '1'
         WHERE 
@@ -50,8 +49,9 @@ if (isset($_POST['sendBtn'])) {
           ";
     $result = mysqli_query($conn, $query);
     if ($result) {
-        redirect('inspection_order.php', 'SMS Message Sent. ');
+        redirect('sms_confirmation_tag.php?id=' .$req_id, 'SMS Message Sent. ');
     } else {
-        redirect('sms_notification.php?=' . $req_id, 'Something Went Wrong. ', 'danger');
+        redirect('sms_notification.php?id=' . $req_id, 'Something Went Wrong. ', 'danger');
     }
+  
 }

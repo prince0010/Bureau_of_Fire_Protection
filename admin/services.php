@@ -8,41 +8,15 @@ include('includes/header.php'); ?>
                 
     <div class="col-md-12">
             <div class="card">
-             
-        <div class="col-md-12">
-            <div class="card">
                 <div class="card-header">
                     <h5> Services
                     <a href="add_services.php" class="btn btn-dark float-end">Add Services</a>
                     </h5>
-                      <div class="col-md-7">
-            <form action="" method = "GET">
-                <div class="row">
-                    <div class="col-md-4">
-                        <input type="date" name="" class = "form-control">
-                    </div>
-                    <div class="col-md-4">
-                        <select name="status" id="" class = "form-control">
-                            <option value="">Select Status</option>
-                            <option value="pending">Pending</option>
-                            <option value="completed">Completed</option>
-                            <option value="cancelled">Cancelled</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="submit" class = "btn btn-dark">Filter</button>
-                        <a href = "users.php" class = "btn btn-danger">Reset</a>
-                    </div>
-                </div>
-            </form>
-        </div>
                 </div>
                 <div class="card-body">
-
                 <div id ="alertmessage">
                             <?= alertMessage(); ?>
                         </div>
-
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>

@@ -1,6 +1,6 @@
 <?php
 
-    $pageTitle = "BFP || Services";
+    $pageTitle = "BFP || Purpose";
 
 include('includes/header.php'); ?>
 

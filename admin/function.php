@@ -1,6 +1,11 @@
 <?php
         require '../config/function.php';
 
+    //Admin Confirm
+    if(isset($_POST['adminConf'])){
+
+    }
+
     //Message
     if(isset($_POST['msgSave'])){
         $message = validate($_POST['message']);

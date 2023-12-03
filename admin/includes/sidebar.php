@@ -36,6 +36,10 @@
                 <span class="nav-link-text ms-1">Services</span>
             </a>
         </li>
+
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Accounts</h6>
+        </li>
         
         <li class="nav-item">
           <a class="nav-link  
@@ -47,7 +51,10 @@
           </a>
         </li>
 
-          
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Datas</h6>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link 
           <?= $pageName == 'inspection_order.php' ? 'active' : '' ?> " href="inspection_order.php">
@@ -57,7 +64,9 @@
             <span class="nav-link-text ms-1">Inspectors Data</span>
           </a>
         </li>
-                   
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Add Users</h6>
+        </li>
         <li class="nav-item">
           <a class="nav-link 
           <?= $pageName == 'inspector_panel.php' ? 'active' : '' ?> " href="inspector_panel.php">
@@ -79,8 +88,8 @@
         </li>
      
         <li class="nav-item">
-          <a class="nav-link" 
-          <?= $pageName == 'duration_panel.php' ? 'active' : '' ?> href="duration_panel.php">
+          <a class="nav-link 
+          <?= $pageName == 'duration_panel.php' ? 'active' : '' ?> " href="duration_panel.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class = "fa far fa-clock	 text-dark text-lg"></i>
             </div>
@@ -89,22 +98,12 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" 
-          <?= $pageName == 'remarks_panel.php' ? 'active' : '' ?> href="remarks_panel.php">
+          <a class="nav-link
+          <?= $pageName == 'remarks_panel.php' ? 'active' : '' ?> " href="remarks_panel.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class = "fa far fa-comment	 text-dark text-lg"></i>
             </div>
             <span class="nav-link-text ms-1">Remarks</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" 
-          <?= $pageName == 'remarks_panel.php' ? 'active' : '' ?> href="message_panel.php">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class = "fa far fa-comment	 text-dark text-lg"></i>
-            </div>
-            <span class="nav-link-text ms-1">Message</span>
           </a>
         </li>
 

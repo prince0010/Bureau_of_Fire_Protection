@@ -120,11 +120,13 @@ include('include/header.php'); ?>
                                 <?php
                                 if ($editserv['data']['msg_send'] == 0) {
                                 ?>
-                                    <a href="sms_notification.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark">Next</a>
+                                   
+                                  
+                                  <a href="inspection_confirmation_tag.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark">Next</a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="inspection_order.php" class="btn btn-dark">Next</a>s
+                                    <a href="inspection_confirmation_tag.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark">Next</a>
                                 <?php
                                 }
                                 ?>
