@@ -27,9 +27,9 @@ include('includes/header.php'); ?>
                                     <th class="text-center">Id</th>
                                     <th class="text-center">Position</th>
                                     <th class="text-center">Name</th>
-                                    <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
+                            <tbody>
                             <?php
                             $services = getAll('inspector_user');
                             if ($services) {
@@ -37,16 +37,13 @@ include('includes/header.php'); ?>
                                 if (mysqli_num_rows($services) > 0) {
                                     foreach ($services as $servicesItem) {
                             ?>
-                                        <tbody>
+                                    
                                             <tr>
                                                 <td class="text-center"><?= $servicesItem['id'] ?> </span></td>
                                                 <td class="text-center"><?= $servicesItem['position'] ?> </span></td>
-                                                <td class="text-center"><?= $servicesItem['name'] ?> </span></td>
+                                                <td class="text-center"><?= $servicesItem['inspector_name'] ?> </span></td>
 
-                                                <td class="text-center">
-                                                    <a href="edit_inspector.php?id=<?= $servicesItem['id'] ?>" class="btn btn-success btn-sm"><i style="font-size:17px" class="fa fa-edit"></i></a>
-                                                    <a href="delete_inspector.php?id=<?= $servicesItem['id'] ?>" class="btn btn-danger btn-sm mx-2 " onclick="return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
-                                                </td>
+                                                
                                             </tr>
                                     <?php
 
@@ -67,5 +64,4 @@ include('includes/header.php'); ?>
                 </div>
             </div>
         </div>
-
-        <?php include('includes/footer.php'); ?>
+        <?php include('includes/scripts.php'); ?>

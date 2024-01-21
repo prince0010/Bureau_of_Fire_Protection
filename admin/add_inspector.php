@@ -26,10 +26,13 @@ include('includes/header.php'); ?>
                                 <select name="position" id="" class="form-control" >
                                     <option value="" disabled>-- Select Position -- </option>
                                     <option value= "SINSP"> SINSP</option>
+                                    <option value= "SF04"> SF04</option>
+                                    <option value= "SF03"> SF03</option>
+                                    <option value= "SF02"> SF02</option>
                                     <option value= "SF01"> SF01</option>
-                                    <option value= "F01"> F01 </option>
-                                    <option value= "F02"> F02 </option>
                                     <option value= "F03"> F03 </option>
+                                    <option value= "F02"> F02 </option>
+                                    <option value= "F01"> F01 </option>
                                 </select>
                             </div>
                         </div>
@@ -37,7 +40,19 @@ include('includes/header.php'); ?>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Name </label>
-                                <input type="text" name = "name" class= "form-control">
+                                <select name="name" id="" class="form-control">
+                            <?php
+                                $inspec = "SELECT * FROM user WHERE role = 'Inspector' ";
+                                $inspec_run = mysqli_query($conn, $inspec);
+                                if (mysqli_num_rows($inspec_run) > 0) {
+                                    foreach ($inspec_run as $row) {
+                            ?>
+                                    <option value="<?= $row['name']; ?>"><?= $row['name']; ?></option>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </select>
                             </div>
                             </div>
                         

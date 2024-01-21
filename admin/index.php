@@ -1,7 +1,11 @@
 <?php include('includes/header.php'); ?>
 
 <div class="row">
+<h4 class="card-header mb-4 mx-2" style="font-weight: bold;">
+      Dashboard
+    </h4>
   <div class="col-md-3 mb-4">
+  
     <div class="card card-body p-3">
       <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Users</p>
       <h5 class="font-weight-bolder mb-0">
@@ -83,22 +87,7 @@
 
     </div>
   </div>
-  <div class="col-md-3 mb-4">
-    <div class="card card-body p-3">
-      <p class="text-sm mb-0 text-capitalize font-weight-bold">Today Acount Added</p>
-      <h5 class="font-weight-bolder mb-0">
-        <?php
-        $todayAdd = date("Y-m-d");
-        $query = "SELECT * FROM user WHERE created_at='$todayAdd'";
-        $result = mysqli_query($conn, $query);
-        $totalCount = mysqli_num_rows($result);
-        echo $totalCount;
-        ?>
 
-      </h5>
-
-    </div>
-  </div>
 
 </div>
 

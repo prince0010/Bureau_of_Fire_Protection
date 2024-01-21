@@ -17,7 +17,7 @@ include('includes/header.php'); ?>
                 <div id ="alertmessage">
                             <?= alertMessage(); ?>
                         </div>
-                        <table class="table table-bordered table-striped">
+                        <table id = "myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th class = "text-center">Id</th>

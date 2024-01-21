@@ -27,9 +27,9 @@ include('includes/header.php'); ?>
                                 <tr>
                                     <th class = "text-center">Id</th>
                                     <th class = "text-center">Duration</th>
-                                    <th class = "text-center">Actions</th>
                                 </tr>
                             </thead>
+                            <tbody>
                             <?php
                                    $services = getAll('duration');
                                    if($services)
@@ -40,19 +40,15 @@ include('includes/header.php'); ?>
                                             foreach($services as $servicesItem)
                                             {
                                                 ?>
-                            <tbody>
+                            
                         
                                            <tr>
                                             <td class = "text-center"><?= $servicesItem['id']?> </span></td>
                                             <td class = "text-center"><?= $servicesItem['duration']?> </span></td>
+                                            </tr>
                                                                 
-                            <td class = "text-center">
-                                        <a  href="edit_duration.php?id=<?= $servicesItem['id']?>" class = "btn btn-success btn-sm"><i style="font-size:17px" class="fa fa-check"></i></a>
-                                        <a href="delete_duration.php?id=<?= $servicesItem['id']?>"
-                                         class = "btn btn-danger btn-sm mx-2 "
-                                         onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
+                         
+                          
                                                  <?php
                                                
                                             }
@@ -74,4 +70,4 @@ include('includes/header.php'); ?>
         </div>
     </div>
 
-<?php include('includes/footer.php'); ?>
+    <?php include('includes/scripts.php'); ?>

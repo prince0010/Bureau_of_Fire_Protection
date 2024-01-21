@@ -220,15 +220,30 @@
 
         }
     }
+    //Barangay
+    if(isset($_POST['addBarangay'])){
+        $barangay = validate($_POST['barangay']);
 
+        $query = "INSERT INTO barangay (barangay_name) VALUES('$barangay')";
+        $result = mysqli_query($conn, $query);
+
+        if($result){
+            redirect('barangay_panel.php', 'Barangay Data Successfully Updated');
+        }
+        else
+        {
+            redirect('barangay_panel.php', 'Something Went Wrong!');
+
+        }
+    }
 
     // Inspector
     if(isset($_POST['addInspector']))
     {
         $name = validate($_POST['name']);
         $position = validate($_POST['position']);
-
-        $query = "INSERT INTO inspector_user (name, position) VALUES ('$name', '$position')";
+      
+        $query = "INSERT INTO inspector_user (inspection_name, position) VALUES ('$name', '$position')";
         $result = mysqli_query($conn, $query);
 
         if($result){
@@ -331,7 +346,7 @@
         if($name != '' && $email != '' && $password != '' && $phone != '' && $address != '')
         {
             $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
+            
             $query = "INSERT INTO user(name, phone_num, address, email, password, is_ban, role) 
             VALUES ('$name',' $phone', '$address' ,'$email','$hashedPassword','$is_ban','$role')";
             $result = mysqli_query($conn, $query);
@@ -361,6 +376,7 @@
         $phone = validate($_POST['phone']);
         $address = validate($_POST['address']);
         $is_ban = validate($_POST['is_ban']) == true ? 1 : 0 ;
+        
         $role = validate($_POST['role']);
         
         $id = validate($_POST['userId']);
@@ -386,6 +402,7 @@
             role = '$role'
             WHERE id = '$id' ";
 
+
             $result = mysqli_query($conn, $query);
 
             if($result)
@@ -402,7 +419,111 @@
         }
 
     }
+   
+    // Denied Request In Denied IO
+    if(isset($_POST['updateDeniedinc'])){
+        $own_name = validate($_POST['owner_name']) == true ? 1 : 0 ;
+        $bus_name = validate($_POST['business_name']) == true ? 1 : 0 ;
+        $address = validate($_POST['address']) == true ? 1 : 0 ;
+        $phone_num = validate($_POST['phone_num']) == true ? 1 : 0 ;
+        $permit = validate($_POST['permit']) == true ? 1 : 0 ;
+        $Landmark = validate($_POST['Landmark']) == true ? 1 : 0 ;
+        $Barangay = validate($_POST['Barangay']) == true ? 1 : 0 ;
+        $remarks = validate($_POST['remarks']) == true ? 1 : 0 ;
+        $inspection_name = validate($_POST['inspection_name']) == true ? 1 : 0 ;
+        $proceed_info = validate($_POST['proceed_info']) == true ? 1 : 0 ;
+        $purpose_info = validate($_POST['purpose_info']) == true ? 1 : 0 ;
+        $duration = validate($_POST['duration']) == true ? 1 : 0 ;
+        $remarks_io = validate($_POST['remarks_io']) == true ? 1 : 0 ;
+        
+         $id = validate($_POST['userId']);
+        $userID = getByID('request', $id);
+        
+        if($userID['status'] != 200) {
+            redirect('confirm_inspection_data.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
+        }
+        
+            $query = "UPDATE request SET 
+            denied_remarks_IO = '$remarks_io', 
+            denied_owner_name = '$own_name',
+            denied_business_name = '$bus_name', 
+            denied_address = '$address', 
+            denied_phone_num = '$phone_num', 
+            denied_upload_permit = '$permit', 
+            denied_purpose_info = '$purpose_info',
+            denied_landmark = '$Landmark',
+            denied_barangay = '$Barangay',
+            denied_remarks = '$remarks',
+            denied_inspection_name = '$inspection_name',
+            denied_proceed_info = '$proceed_info',
+            denied_duration = '$duration',
+            status = '3'
+            WHERE id = '$id' ";
+              $result = mysqli_query($conn, $query);
+        // }
+           
+            if($result)
+            {
+                redirect('denied_io.php', 'Select Denied Done');
+            }
+            else{
+                redirect('denied_io.php', 'Something Went Wrong. ', 'danger');
+          }
+        }
+          
+    
+    // Denied Request
+    if(isset($_POST['updateDenied'])){
+        $own_name = validate($_POST['owner_name']) == true ? 1 : 0 ;
+        $bus_name = validate($_POST['business_name']) == true ? 1 : 0 ;
+        $address = validate($_POST['address']) == true ? 1 : 0 ;
+        $phone_num = validate($_POST['phone_num']) == true ? 1 : 0 ;
+        $permit = validate($_POST['permit']) == true ? 1 : 0 ;
+        $Landmark = validate($_POST['Landmark']) == true ? 1 : 0 ;
+        $Barangay = validate($_POST['Barangay']) == true ? 1 : 0 ;
+        $remarks = validate($_POST['remarks']) == true ? 1 : 0 ;
+        $inspection_name = validate($_POST['inspection_name']) == true ? 1 : 0 ;
+        $proceed_info = validate($_POST['proceed_info']) == true ? 1 : 0 ;
+        $purpose_info = validate($_POST['purpose_info']) == true ? 1 : 0 ;
+        $duration = validate($_POST['duration']) == true ? 1 : 0 ;
+        $remarks_io = validate($_POST['remarks_io']) == true ? 1 : 0 ;
+        
+         $id = validate($_POST['userId']);
+        $userID = getByID('request', $id);
+        
+        if($userID['status'] != 200) {
+            redirect('confirm_inspection_data.php?id='.$id, 'No such ID is Recorded in Database. ', 'danger');
+        }
+        
+            $query = "UPDATE request SET 
+            denied_remarks_IO = '$remarks_io', 
+            denied_owner_name = '$own_name',
+            denied_business_name = '$bus_name', 
+            denied_address = '$address', 
+            denied_phone_num = '$phone_num', 
+            denied_upload_permit = '$permit', 
+            denied_purpose_info = '$purpose_info',
+            denied_landmark = '$Landmark',
+            denied_barangay = '$Barangay',
+            denied_remarks = '$remarks',
+            denied_inspection_name = '$inspection_name',
+            denied_proceed_info = '$proceed_info',
+            denied_duration = '$duration',
+            status = '3'
+            WHERE id = '$id' ";
+              $result = mysqli_query($conn, $query);
 
+            if($result)
+            {
+                redirect('inspection_order.php?id='.$id, 'Select Denied Done');
+            }
+            else{
+                redirect('inspection_order.php', 'Something Went Wrong. ', 'danger');
+            }
+        }
+
+       
+        
     // Save Service
 
     if(isset($_POST['save_service']))

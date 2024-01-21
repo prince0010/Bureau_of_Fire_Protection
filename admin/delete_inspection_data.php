@@ -7,11 +7,11 @@
 
         $serviceId = validate($paraResult);
 
-        $services = getByID('inspection_order', $serviceId);
+        $services = getByID('request', $serviceId);
 
         if($services['status'] == 200){
 
-            $serviceDeleteRes = deleteQuery('inspection_order', $serviceId);
+            $serviceDeleteRes = deleteQuery('request', $serviceId);
             if($serviceDeleteRes)
             {
                  // Only one move in folder in order to get into assets

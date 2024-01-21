@@ -54,7 +54,8 @@ include('include/header.php'); ?>
                         <div class="col-md-6">
                         <div class="mb-3">
                             <label >Phone Number </label>
-                            <input type="text" name = "phone" class= "form-control" value = "<?=$_SESSION["loggedInUser"]['phone_num'] ?>" autocomplete = "off" readonly required >
+                            <!-- <input type="text" name = "phone" class= "form-control" value = "<?=$_SESSION["loggedInUser"]['phone_num'] ?>" autocomplete = "off" readonly required > -->
+                            <input type="text" name = "phone" class= "form-control" value = "<?=$_SESSION["loggedInUser"]['phone_num'] ?>" autocomplete = "off" required >
                         </div>
                     </div>
                         
@@ -68,8 +69,23 @@ include('include/header.php'); ?>
                     
                     <div class="col-md-6">
                     <div class="mb-3">
-                        <label >Barangay </label>
-                        <input type="text" name = "barangay" class= "form-control" autocomplete = "off" required >
+                        <label >Street </label>
+                        <!-- <input type="text" name = "barangay" class= "form-control" autocomplete = "off" required > -->
+                        <select name = "barangay_name" required class="form-control">
+                                    <option value="">Select Street</option>
+                                    <?php
+                                    $sql = "SELECT * FROM barangay";
+                                    $result = mysqli_query($conn, $sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                        foreach ($result as $row) {
+                                    ?>
+                                           <option value="<?= $row['barangay_name']; ?>"><?= $row['barangay_name']; ?></option>
+                                    <?php
+                                        }
+                                    }
+                                    else{}
+                                    ?>
+                                </select>
                     </div>
                     </div>
 

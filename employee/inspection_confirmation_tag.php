@@ -35,7 +35,7 @@ include('include/header.php');
                                                 </div>
                                                 <div class="text-center">
                                                     <h5>
-                                                        Continue to the Inspection Order?
+                                                        Continue to the SMS Message?
                                                     </h5>
                                                     <a href="sms_notification.php?id=<?=$editserv['data']['id']; ?>" class="btn btn-dark p-4">Yes</a>
                                                     <a href="confirm_request.php?id=<?=$editserv['data']['id'];?>" class="btn btn-dark p-4">No</a>

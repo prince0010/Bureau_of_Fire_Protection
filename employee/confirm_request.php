@@ -33,7 +33,7 @@ include('include/header.php'); ?>
                         </div>
 
                         <!-- The enctype= "multipart/form-data main attribute to accept the upload image in form submit if not added this it means not uplaod any image -->
-                        <form enctype="multipart/form-data">
+                        <form action="function.php"  method = "POST" enctype="multipart/form-data" >
 
                             <input type="hidden" name="request_Id" value="<?= $editserv['data']['id']; ?>">
 
@@ -92,9 +92,8 @@ include('include/header.php'); ?>
                                 <label>Landmark</label>
                                 <input type="text" name="name" value="<?= $editserv['data']['landmark'] ?>" required class="form-control" readonly>
                             </div>
-
                             <div class="mb-3">
-                                <label>Barangay</label>
+                                <label>Street</label>
                                 <input type="text" name="name" value="<?= $editserv['data']['barangay'] ?>" required class="form-control" readonly>
                             </div>
 
@@ -103,6 +102,7 @@ include('include/header.php'); ?>
                                 <input type="text" name="name" value="<?= $editserv['data']['remarks'] ?>" required class="form-control" readonly>
                             </div>
 
+                          
                             <br />
                             <label> Proceed to Inspection Order? </label>
                             <hr class="bg-dark">
@@ -110,16 +110,14 @@ include('include/header.php'); ?>
                                 <?php
                                 if ($editserv['data']['msg_send'] == 0) {
                                 ?>
-                                  <a href="inspection_confirmation_tag.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark">Next</a>
+                                  <a href="inspection_confirmation_tag.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark" >Next</a>
                                 <?php
                                 } else {
                                 ?>
-                                  
-                                    <a href="inspection_order.php" class="btn btn-dark">Next</a>
+                                    <a href="inspection_order.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark">Next</a>
                                 <?php
                                 }
                                 ?>
-
                             </div>
                     <?php
                 } else {
@@ -137,4 +135,4 @@ include('include/header.php'); ?>
     </div>
 </div>
 
-<?php include('include/footer.php'); ?>
+<!-- <?php include('include/footer.php'); ?> -->

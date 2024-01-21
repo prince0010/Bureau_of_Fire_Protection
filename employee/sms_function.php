@@ -23,7 +23,8 @@ if (isset($_POST['sendBtn'])) {
 
 
         $base_url = "n8d4xe.api.infobip.com";
-        $api_key = "bdbffe21632c406a7860f50a0c924cdb-96206200-a4c2-4fa6-b815-23efc671e173";
+        // $api_key = "bdbffe21632c406a7860f50a0c924cdb-96206200-a4c2-4fa6-b815-23efc671e173";
+        $api_key = "0ac4ad78c6b252b017597736de7e9775-3fff9469-17e1-45e5-bcaa-dd19677fada1";
 
         $configuration = new Configuration(host: $base_url, apiKey: $api_key);
 
@@ -33,8 +34,7 @@ if (isset($_POST['sendBtn'])) {
 
         $message = new SmsTextualMessage(
             destinations: [$destination],
-            text: $smsessage,
-            from:'BFP'
+            text: $smsessage
         );
 
         $request = new SmsAdvancedTextualRequest(messages: [$message]);

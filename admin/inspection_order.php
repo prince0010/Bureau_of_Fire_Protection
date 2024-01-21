@@ -9,35 +9,9 @@ include('includes/header.php'); ?>
         <div class="card">
             <div class="card-header">
                 <h5> Inspectors Data
-                    <a href="add_users.php" class="btn btn-dark float-end"> Add Inspectors Data</a>
+                    <a href="confirmed_io.php" class="btn btn-dark float-end mx-2"> Confirm Request I/O</a>
+                    <a href="denied_io.php" class="btn btn-dark float-end"> Denied Request I/O</a>
                 </h5>
-                <div class="col-md-7">
-                    <form action="" method="GET">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <select name="status" required class="form-control">
-                                    <option value="">Select Inspector</option>
-                                    <?php
-                                    $sql = "SELECT * FROM inspector_user";
-                                    $result = mysqli_query($conn, $sql);
-                                    if (mysqli_num_rows($result) > 0) {
-                                        foreach ($result as $row) {
-                                    ?>
-                                            <option value="<?= $row['name'] ?>" <?= isset($_GET['status'])  == true ? ($_GET['status'] == $row['name'] ? 'selected' : ' ') : ' ' ?>> <?= $row['position'] ?> <?= $row['name'] ?>
-                                            </option>
-                                    <?php
-                                        }
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-dark">Filter</button>
-                                <a href="inspection_order.php" class="btn btn-danger">Reset</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
             <div class="card-body">
                 <div id="alertmessage">
@@ -46,9 +20,10 @@ include('includes/header.php'); ?>
                 <?php
                 if (isset($_GET['status']) && isset($_GET['status']) != '') {
                     $role = validate($_GET['status']);
-                    $services = mysqli_query($conn, "SELECT * FROM inspection_order WHERE inspection_name ='$role' ORDER BY id DESC");
+                    $services = mysqli_query($conn, "SELECT * FROM request WHERE inspection_name ='$role' ORDER BY id DESC");
                 } else {
-                    $services = getAll('inspection_order');
+                    $services = mysqli_query($conn, "SELECT * FROM request WHERE status = '1' AND updated_status = '1' ");
+                    // $services = getAll('request');
                 }
                 if ($services) {
                     if (mysqli_num_rows($services) > 0) {
@@ -56,11 +31,13 @@ include('includes/header.php'); ?>
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    <th class="text-center">Client Name</th>
                                     <th class="text-center">To</th>
                                     <th class="text-center">Proceed</th>
                                     <th class="text-center">Purpose</th>
                                     <th class="text-center">Duration</th>
                                     <th class="text-center">Remarks or Additional Instruction</th>
+                                    <th class="text-center">Status</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -69,11 +46,24 @@ include('includes/header.php'); ?>
                                 foreach ($services as $servicesItem) {
                                 ?>
                                     <tr>
+                                        <td class="text-center"><?= $servicesItem['owner_name'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['inspection_name'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['proceed_info'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['purpose_info'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['duration'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['remarks'] ?> </span></td>
+                                        <td class="text-center">
+                                            <?php 
+                                            if($servicesItem['status'] == '2' ){
+                                                echo '<span class = "badge bg-success text-white"> Please Check and<br/>  Confirm this Admin </span>';
+                                            }
+                                            else{
+                                                echo '<span class = "badge bg-info text-white"> Client Updated <br/> the Rejected Data </span>';
+                                            }
+                                        
+                                            ?> 
+                                    </span>
+                                        </td>
                                         <!--   <td class = "text-center">
                            <?php
                                     if ($servicesItem['status'] == 1) {
@@ -106,5 +96,4 @@ include('includes/header.php'); ?>
         </div>
     </div>
 </div>
-
-<?php include('includes/footer.php'); ?>
+<?php include('includes/scripts.php'); ?>

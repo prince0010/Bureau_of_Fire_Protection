@@ -5,3 +5,8 @@
 .white-space{
   text-overflow: ellipsis;
 }
+.float-center {
+  float: center !important;
+}
+
+

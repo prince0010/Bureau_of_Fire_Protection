@@ -94,7 +94,6 @@ session_start();
         {
             if($_GET[$paramTypeID] != null){
               return $_GET[$paramTypeID] ;
-
             }
             else
             {
@@ -106,7 +105,52 @@ session_start();
         }
 
     }
-    
+    function getAllbyiD($Fid){
+        global $conn;
+
+ // validate any string value = mysqli_real_escape_string
+            $Fid = validate($Fid);
+        
+
+        $query = "SELECT * FROM inspection_order INNER JOIN request ON '$Fid' = request.id ";
+
+        $result = mysqli_query($conn, $query);
+        if($result)
+        {
+            if(mysqli_num_rows($result) == 1)
+            {
+
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $response = [
+                    'status' => 200,
+                    'message' => 'Fetched Data',
+                    'data' => $row
+                ];
+                return $response;
+
+
+            }
+            else 
+            {
+                $response = [
+                    'status' => 404,
+                    'message' => 'No Data Has been Recorded'
+                ];
+                return $response;
+            }
+
+        }
+        else 
+        {
+            $response = [
+                'status' => 500,
+                'message' => 'Something Went Wrong'
+            ];
+            return $response;
+        }
+
+    }
+
     // This function is useful in further creating records
     function getByID($tableName, $id){
 
@@ -171,4 +215,18 @@ session_start();
         return $result;
 
     }
+     // Update Query Function
+     function updateQuery($tableName, $id)
+     {
+         // validate ffunction that you can find  in the 1st part to validate the data/s
+         $table = validate($tableName);
+         $userID = validate($id);
+ 
+         global $conn;
+ 
+         $query = "UPDATE $table SET status = '2' WHERE id = '$userID'";
+         $result = mysqli_query($conn, $query);
+         return $result;
+ 
+     }
 ?>

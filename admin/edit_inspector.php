@@ -6,7 +6,7 @@ include('includes/header.php'); ?>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4> Add Inspector
+                    <h4> Edit Inspector Data
 
                         <a href="inspector_panel.php" class="btn btn-dark float-end">Back</a>
                     </h4>

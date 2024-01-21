@@ -5,8 +5,8 @@
 
 
     if(isset($_POST['formRequest']))
-    {
-
+    {       
+        $F_io = validate($_POST['form_id']);
         $name = validate($_POST['name']);
         $b_name = validate($_POST['b_name']);
         $date = validate($_POST['date']);
@@ -24,7 +24,7 @@
             if($ImgFileTypes != 'jpg' && $ImgFileTypes != 'jpeg' && $ImgFileTypes != 'png')
             {
                 // If it doesn't matches then it will redirect back
-            redirect('add_services.php', 'Sorry only jpg, jpeg and png Format Only. ', 'danger');
+            redirect('index.php', 'Sorry only jpg, jpeg and png Format Only. ', 'danger');
 
             }
 
@@ -45,10 +45,11 @@
 
             $address = validate($_POST['address']);
             $landmark = validate($_POST['landmark']);
-            $barangay = validate($_POST['barangay']);
+            $barangay = validate($_POST['barangay_name']);
             $remarks = validate($_POST['remarks']);
     
             $query = "INSERT INTO request (
+            user_id,
              owner_name,
              business_name,
              address,
@@ -59,6 +60,7 @@
              barangay,
              remarks)
              VALUES(
+                '$F_io',
             '$name',
             '$b_name',
             '$address',

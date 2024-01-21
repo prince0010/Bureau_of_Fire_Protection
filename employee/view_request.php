@@ -144,7 +144,7 @@ if ($user['status'] == 200) {
                             </tr>
                         </tbody>
                     </table>
-
+                    <a href="denied_request.php?id=<?= $user['data']['id']; ?>" class="btn btn-danger w-10" > Denied </a>
                 </div>
             </div>
         </div>
@@ -158,4 +158,4 @@ if ($user['status'] == 200) {
 
 
 
-<?php include('include/footer.php') ?>
+<?php include('include/scripts.php') ?>

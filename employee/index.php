@@ -1,6 +1,6 @@
 <?php
 
-$pageTitle = "BFP || Requested Forms";
+$pageTitle = "BFP || User List";
 
 include('include/header.php'); ?>
 
@@ -8,8 +8,10 @@ include('include/header.php'); ?>
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5> User List
-                    <a href="add_users.php" class="btn btn-dark float-end">Add User</a>
+                <h5> 
+                    List
+                    <a href="inspection_order_data.php" class="btn btn-dark float-end mx-2">Inspection Order</a>
+                    <a href="denied_io.php" class="btn btn-dark float-end"> Denied Request I/O</a>
                 </h5>
                 <div class="col-md-7">
                     <form action="" method="GET">
@@ -40,7 +42,10 @@ include('include/header.php'); ?>
                     $role = validate($_GET['status']);
                     $services  = mysqli_query($conn, "SELECT * FROM request WHERE status='$role' ORDER BY id DESC");
                 } else {
-                    $services  = getAll('request');
+                    // $services  = getAll('request');
+                    $table = validate('request');
+                    $query = "SELECT * FROM $table WHERE status = '0' ORDER BY id DESC";
+                    $services = mysqli_query($conn, $query);
                 }
                 if ($services ) {
                     if (mysqli_num_rows($services ) > 0) {
@@ -85,11 +90,28 @@ include('include/header.php'); ?>
                             <td class = "text-center"><?= $servicesItem['landmark']?></td>
                                     <td class = "text-center"><?= $servicesItem['remarks']?></td>
                             <td class = "text-center"> 
-                                <a  href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
+                               
+                                <?php 
+                                if($servicesItem['status'] == 1){
+                                    ?>
+                                     <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
+                                        <a href="delete_request.php?id=<?= $servicesItem['id']?>"
+                                         class = "btn btn-danger btn-xs "
+                                         onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
+                                    <?php
+                                      }
+                                    else{
+                                    ?>
+                                     <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
                                         <a href="confirm_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-success btn-xs" name = "confirmBtn"><i style="font-size:17px" class="fa fa-check"></i></a>
                                         <a href="delete_request.php?id=<?= $servicesItem['id']?>"
                                          class = "btn btn-danger btn-xs "
                                          onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
+                                    <?php
+                                    }
+                              
+                                ?>
+                                        
                                     </td>
                                 </tr>
                                 <?php
@@ -99,7 +121,7 @@ include('include/header.php'); ?>
                         </table>
                 <?php
                     } else {
-                        echo '<h5> No Record Found </h5>';
+                        echo '<h5> No Client is Requesting Yet </h5>';
                     }
                 } else {
                     echo '<h5> Something Went Wrong </h5>';
@@ -110,7 +132,7 @@ include('include/header.php'); ?>
     </div>
 </div>
 
-<?php include('include/footer.php'); ?>
+<?php include('include/scripts.php'); ?>
 
 
 

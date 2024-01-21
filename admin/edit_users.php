@@ -57,7 +57,7 @@ include('includes/header.php'); ?>
                                     <div class="col-md-6">
                                     <div class="mb-3">
                                         <label >Password </label>
-                                        <input type="text" value =<?=$user['data']['password'];?> name = "password" class= "form-control" required>
+                                        <input type="password" name = "password" class= "form-control" required>
                                     </div>
                                     </div>
                                     <div class="col-md-6">
@@ -75,19 +75,20 @@ include('includes/header.php'); ?>
                             </div>
 
                                     <div class="col-md-6">
-                                    <div class="mb-5">
+                                    <div class="mb-3">
                                         <label >Select Role </label>
                                         <select name="role" id="" class="form-control"  >
                                             <option value="" disabled>-- Select Role -- </option>
                                             <option value= "Admin" <?=$user['data']['role'] == 'Admin' ? 'selected' : ' ';?> >Admin</option>
                                             <option value= "Employee" <?=$user['data']['role'] == 'Employee' ? 'selected' : ' ';?> >Employee</option>
                                             <option value= "Client" <?=$user['data']['role'] == 'Client' ? 'selected' : ' ';?> >Client</option>
+                                            <option value= "Inspector" <?=$user['data']['role'] == 'Inspector' ? 'selected' : ' ';?> >Inspector</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label >Is Ban </label>
+                                    <label >Deactivate User </label>
                                     <br />
                                     <input type="checkbox"  <?=$user['data']['is_ban'] == true ? 'checked' : '' ;?> name = "is_ban" style = "width:30px;height:30px;">
                                 </div>

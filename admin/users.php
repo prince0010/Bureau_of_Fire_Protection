@@ -8,7 +8,7 @@ include('includes/header.php'); ?>
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5> Inspectors Data
+                <h5> Add User
                     <a href="add_users.php" class="btn btn-dark float-end"> Add Users</a>
                 </h5>
                 <div class="col-md-7">
@@ -67,7 +67,7 @@ include('includes/header.php'); ?>
                                         <td class="text-center"><?= $userItem['name'] ?> </span></td>
                                         <td class="text-center"><?= $userItem['phone_num'] ?> </span></td>
                                         <td class="text-center"><?= $userItem['email'] ?></td>
-                                        <td class="text-center"><?= $userItem['is_ban'] == true ? ' <span class = "badge bg-danger text-white mx-4"> Banned </span>' : '<span class ="badge bg-success text-white mx-4" > Active' ?></td>
+                                        <td class="text-center"><?= $userItem['is_ban'] == true ? ' <span class = "badge bg-danger text-white mx-4"> Deactivate </span>' : '<span class ="badge bg-success text-white mx-4" > Active' ?></td>
                                         <td class="text-center"><?= $userItem['role'] ?> </span></td>
                                         <td class="text-center"><?= $userItem['created_at'] ?> </span></td>
                                         <td class="text-center">
@@ -93,4 +93,4 @@ include('includes/header.php'); ?>
     </div>
 </div>
 
-<?php include('includes/footer.php'); ?>
+<?php include('includes/scripts.php'); ?>

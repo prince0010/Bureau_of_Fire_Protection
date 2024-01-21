@@ -1,6 +1,26 @@
 <?php
     require './config/function.php';
 
+        // Function to generate random verification code
+        
+
+
+    if(isset($_POST['check_submit_btn'])){
+        $email = $_POST['email_id'];
+        
+
+        $emailQuery = "SELECT * FROM user WHERE email = '$email' ";
+        $email_query_run = mysqli_query($conn, $emailQuery);
+        if(mysqli_num_rows($email_query_run) > 0){
+           echo "Email Already Taken. Please Try Another one.";
+        }
+        else{
+            echo "This Email is Available.";
+         
+        }
+    }
+
+
     if(isset($_POST['signupBtn'])){
 
         $name = validate($_POST['name']);
@@ -17,10 +37,17 @@
         // FILTERED EMAIL AND PASSWORD
         $email = filter_var($emailInput, FILTER_SANITIZE_EMAIL);
         $password = filter_var($passwordInput, FILTER_SANITIZE_STRING);
+
+
+        $emailQuery = "SELECT * FROM user WHERE email = '$email' ";
+        $email_query_run = mysqli_query($conn, $emailQuery);
+        if(mysqli_num_rows($email_query_run) > 0){
+            redirect('sign_up.php', "Email Already Taken. Please Try Another one.", "danger");
+        }
+        else
+        {
         if($password == $confirmPassword){
             
-         
-        
         if($name != '' && $phone_num != '' && $address != '' && $email != '' && $password != '')
         {
             $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
@@ -30,7 +57,9 @@
 
             if($result)
             {
-                redirect('login.php', "Registered Successfully");
+                
+                redirect('login.php', "Created Account Successfully.");
+                // redirect('sign_up.php', "Open your Email to Confirm the Verification.");
             }
             else{
                 redirect('sign_up.php', "Something Went Wrong", "danger");
@@ -44,7 +73,7 @@
         redirect('sign_up.php', "Does not Match the Password", "danger");
     }
     }
-
+}
 
 
 ?>

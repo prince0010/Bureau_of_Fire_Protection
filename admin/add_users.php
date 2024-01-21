@@ -44,7 +44,8 @@ include('includes/header.php'); ?>
                             <div class="col-md-6">
                             <div class="mb-3">
                                 <label >Phone Number </label>
-                                <input type="text" name = "phone" class= "form-control">
+                                <input type="text" name = "phone" value = "+63" placeholder = "Enter your Phone Number" class="form-control">
+                                <!-- <input type="text" name = "phone" class= "form-control"> -->
                             </div>
                             </div>
 
@@ -62,39 +63,19 @@ include('includes/header.php'); ?>
                                     <option value="" disabled>-- Select Role -- </option>
                                     <option value= "Admin"> Admin</option>
                                     <option value= "Employee"> Employee</option>
-                                    <option value= "Client"> Client</option>
+                                    <option value= "Inspector"> Inspector</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                        <div class="mb-3">
-                            <label >Is Ban </label>
-                            <br />
-                            <input type="checkbox" name = "is_ban" style = "width:30px;height:30px;">
-                        </div>
-                        </div>
-                        
-                        <div class="col-md-6">
+                         <div class="col-md-6">
                         <div class="mb-3">
                             <button type = "submit" name = "addUser" class="btn btn-dark"> Save </button>
                     </div>
-                        </div>
+                        </div> 
                            
                             </div>
-        
-                          
-                          
-        
-                            
-        
-                          
-        
-                          
-        
-                           
                         </div>
-
                 </form>
                 </div>
             </div>

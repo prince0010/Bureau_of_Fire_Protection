@@ -30,10 +30,25 @@ if(isset($_SESSION['auth']))
                                         <label for=""> Full Name</label>
                                         <input type="text" name = "name" placeholder = "Enter your Fullname" class="form-control">
                                     </div>
+                                    <!-- <div class="mb-3">
+                                        <label for=""> First Name</label>
+                                        <input type="text" name = "fname" placeholder = "Enter your Fullname" class="form-control">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for=""> Last Name</label>
+                                        <input type="text" name = "lname" placeholder = "Enter your Fullname" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for=""> Middle Name</label>
+                                        <input type="text" name = "mname" placeholder = "Enter your Fullname" class="form-control">
+                                    </div> -->
 
                                     <div class="mb-3">
                                         <label for=""> Phone Number</label>
-                                        <input type="text" name = "phone_num" placeholder = "Enter your Phone Number" class="form-control">
+                                        <input type="text" name = "phone_num" value = "+63" placeholder = "Enter your Phone Number" class="form-control">
+                                        <!-- <input type="tel" id="phone" class = "form-control" value="+63" name="phone" title="Please enter a valid phone number starting with +63 and followed by 10 digits." required>  -->
                                     </div>
 
                                     <div class="mb-3">
@@ -43,7 +58,8 @@ if(isset($_SESSION['auth']))
 
                                     <div class="mb-3">
                                         <label for=""> Email </label>
-                                        <input type="email" name = "email" placeholder = "Enter your Email" class="form-control">
+                                        <input type="email" name = "email" placeholder = "Enter your Email" class="form-control check_email">
+                                        <strong class="error_email " id ="error_msg" style = "color: black;" ></strong>
                                     </div>
 
                                     <div class="mb-3">
@@ -63,6 +79,12 @@ if(isset($_SESSION['auth']))
                                     <option value= "Client"> User </option>
                                 </select>
                                     </div>
+
+                                    <!-- <div class="mb-3">
+                                        <label for=""> Verification Code </label>
+                                    <input type="text" name = "confpassword" placeholder = "Enter to Verification Code" class="form-control">
+                                    <input type="submit" class = "btn btn-dark" name = "verification_code" value="Send Verification Code">
+                                    </div> -->
 
                                 <div class="mb-3">
                                     <label hidden="hidden" >Is Ban </label>
@@ -84,4 +106,40 @@ if(isset($_SESSION['auth']))
             </div>
         </div>
 
-<?php include('./client/includes/footer.php')?>
+        <script> 
+$(document).ready(function(){
+
+$('.check_email').keyup(function (e) {
+
+    var email = $('.check_email').val();
+    //alert email
+    $.ajax({
+        type: "POST",
+        url: "sign_up-func.php",
+        data: {
+                "check_submit_btn" : 1,
+                "email_id": email,
+        },
+        success: function(response) {
+            // alert(email);
+            $('.error_email').text(response);
+        }
+
+    });
+
+});
+});
+
+</script>
+<!-- <script>
+
+function hideMessage() {
+    document.getElementById("error_msg").style.display = "none";
+};
+setTimeout(hideMessage, 10000);
+</script> -->
+<?php 
+
+
+include('./client/includes/footer.php');
+?>

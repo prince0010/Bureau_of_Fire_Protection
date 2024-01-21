@@ -24,6 +24,7 @@ if(isset($_SESSION['auth']))
                             </div>
                             <div class="card-body">
                                 <?php alertMessage(); ?>
+                                
                                 <form action="login-func.php" method = "POST">
                                     <div class="mb-3">
                                         <label for=""> Email</label>
@@ -32,7 +33,7 @@ if(isset($_SESSION['auth']))
 
                                     <div class="mb-3">
                                         <label for=""> Password</label>
-                                        <input type="password" name = "password" class="form-control">
+                                        <input type="password" name = " password" class="form-control">
                                     </div>
                                     
                                     <div class="mb-3">
@@ -50,4 +51,5 @@ if(isset($_SESSION['auth']))
             </div>
         </div>
 
-<?php include('./client/includes/footer.php')?>
+<?php include('inc/footer.php'); ?>
+<!-- include('./client/includes/footer.php') -->
