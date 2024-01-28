@@ -1,7 +1,7 @@
 
 <?php
 
-    $pageTitle = "BFP || Remarks";
+    $pageTitle = "BFP || Reports";
 
 include('includes/header.php'); ?>
 
@@ -24,7 +24,7 @@ include('includes/header.php'); ?>
                                     <th class = "text-center">Date</th>
                                     <th class = "text-center">Name</th>
                                     <th class = "text-center">Business Name</th>
-                                    <th class = "text-center">Action</th>
+                                    <!-- <th class = "text-center">Action</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,9 +42,12 @@ include('includes/header.php'); ?>
                                             <td class = "text-center"><?= $servicesItem['date']?> </span></td>
                                             <td class = "text-center"><?= $servicesItem['owner_name']?> </span></td>
                                             <td class = "text-center"><?= $servicesItem['business_name']?> </span></td>
-                                            <td class="text-center">
+                                            <!-- <td class="text-center">
                                             <a href="generate_pdf.php?id=<?= $servicesItem['id']?>" class="btn btn-dark btn-sm"><i style="font-size:17px" class="fa fa-print"></i></a>
-                                            </td>
+                                            </td> -->
+                                            <!-- <td class="text-center">
+                                            <a href="delete_reports.php?id=<?= $servicesItem['id'] ?>" class="btn btn-danger btn-sm mx-2 " onclick="return confirm('Are you sure you want to delete this data?')">Delete</a>
+                                            </td> -->
                                 </tr>
                                                  <?php
                                             }

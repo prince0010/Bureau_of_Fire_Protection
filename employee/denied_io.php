@@ -11,33 +11,6 @@ include('include/header.php'); ?>
                 <h5> Denied Request Inspection Order
                 <a href="index.php" class="btn btn-dark float-end"> Back </a>
                 </h5>
-                <div class="col-md-7">
-                    <form action="" method="GET">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <select name="status" required class="form-control">
-                                    <option value="">Select Inspector</option>
-                                    <?php
-                                    $sql = "SELECT * FROM inspector_user";
-                                    $result = mysqli_query($conn, $sql);
-                                    if (mysqli_num_rows($result) > 0) {
-                                        foreach ($result as $row) {
-                                    ?>
-                                            <option value="<?= $row['name'] ?>" <?= isset($_GET['status'])  == true ? ($_GET['status'] == $row['name'] ? 'selected' : ' ') : ' ' ?>> <?= $row['position'] ?> <?= $row['name'] ?>
-                                            </option>
-                                    <?php
-                                        }
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-dark">Filter</button>
-                                <a href="inspection_order.php" class="btn btn-danger">Reset</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
             <div class="card-body">
                 <div id="alertmessage">
@@ -171,4 +144,4 @@ include('include/header.php'); ?>
     </div>
 </div>
 
-<!-- <?php include('include/footer.php'); ?> -->
+<?php include('include/scripts.php'); ?>

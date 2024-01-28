@@ -13,7 +13,7 @@ require 'config/function.php' ;
                 echo $pageTitle;
             }
             else{
-                echo 'BFP || Bureau of Fire Protection';
+                echo 'BFP || Nazareth Bureau of Fire Protection';
             }
          ?>
     </title>

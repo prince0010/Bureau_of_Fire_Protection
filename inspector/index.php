@@ -80,7 +80,8 @@ include('includes/header.php'); ?>
 
                                         <td class="text-center">
                                             <a href="reschedule_data.php?id=<?= $servicesItem['id'] ?>" class="btn btn-dark btn-xs ">Re-schedule</i></a>
-                                            <a href="delete_inspection_data.php?id=<?= $servicesItem['id'] ?>" class="btn btn-danger btn-sm mx-2 " onclick="return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
+                                            
+                                            <!-- <a href="delete_inspection_data.php?id=<?= $servicesItem['id'] ?>" class="btn btn-danger btn-sm mx-2 " onclick="return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a> -->
                                         </td>
                                     </tr>
                                 <?php
@@ -101,4 +102,4 @@ include('includes/header.php'); ?>
     </div>
 </div>
 
-<?php include('includes/footer.php'); ?>
+<?php include('includes/scripts.php'); ?>

@@ -15,7 +15,7 @@
       </a>
     </div>
     <hr class="horizontal dark mt-0">
-    <div class="collapse navbar-collapse w-auto my-7" id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse w-auto my-8" id="sidenav-collapse-main">
       <ul class="navbar-nav">
       <li class="nav-item">
           <a class="nav-link  
@@ -158,7 +158,7 @@
         </li>
           
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link    
           <?= $pageName == 'setting.php' ? 'active' : '' ?> " href="setting.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -166,7 +166,7 @@
             </div>
             <span class="nav-link-text ms-1">Setting</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link  
           <?= $pageName == 'reports.php' ? 'active' : '' ?>

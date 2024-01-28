@@ -83,4 +83,4 @@ if ($user['status'] == 200) {
 
 
 
-<?php include('includes/footer.php') ?>
+<?php include('includes/scripts.php'); ?>

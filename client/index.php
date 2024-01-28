@@ -100,16 +100,18 @@
                                 if(($servicesItem['status'] != '3')){
                              ?>
                                     <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
-                               <!-- <a href="edit_request.php?id=<?= $servicesItem['id'] ?>" class="btn btn-success btn-xs"><i style="font-size:17px" class="fa fa-edit"></i></a> -->
-                            <?php
+                               <a href="edit_request.php?id=<?= $servicesItem['id'] ?>" class="btn btn-success btn-xs"><i style="font-size:17px" class="fa fa-edit"></i></a>
+                               <a href="delete_request.php?id=<?= $servicesItem['id'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash"></i></a>
+                         
+                         <?php
                                 }  
                                 
                                 else{
                                 ?>
                                 <a href="denied_fille.php?id=<?= $servicesItem['id']?>" class = "btn btn-danger btn-xs"><i style="font-size:17px" class="fa fa-warning"></i></a>
                                     <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
-                               <a href="edit_request.php?id=<?= $servicesItem['id'] ?>" class="btn btn-success btn-xs"><i style="font-size:17px" class="fa fa-edit"></i></a>
-                              
+                               <!-- <a href="edit_request.php?id=<?= $servicesItem['id'] ?>" class="btn btn-success btn-xs"><i style="font-size:17px" class="fa fa-edit"></i></a> -->
+                               <a href="delete_request.php?id=<?= $servicesItem['id'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash"></i></a>
                         </td>
                                     <?php
                             }}

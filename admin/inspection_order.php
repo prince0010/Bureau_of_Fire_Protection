@@ -22,7 +22,7 @@ include('includes/header.php'); ?>
                     $role = validate($_GET['status']);
                     $services = mysqli_query($conn, "SELECT * FROM request WHERE inspection_name ='$role' ORDER BY id DESC");
                 } else {
-                    $services = mysqli_query($conn, "SELECT * FROM request WHERE status = '1' AND updated_status = '1' ");
+                    $services = mysqli_query($conn, "SELECT * FROM request WHERE status = '1' OR updated_status = '1' ");
                     // $services = getAll('request');
                 }
                 if ($services) {
