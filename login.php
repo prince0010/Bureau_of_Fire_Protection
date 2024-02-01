@@ -18,9 +18,9 @@ if(isset($_SESSION['auth']))
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4 ">                    
-                        <div class="card shadow-sm " style="margin-top: 25%;">
+                        <div class="card shadow-sm " style="margin-top: 20%;">
                             <div class="card-header">
-                                <h4>Login</h4>
+                                <h4 class="text-center">Login</h4>
                             </div>
                             <div class="card-body">
                                 <?php alertMessage(); ?>
