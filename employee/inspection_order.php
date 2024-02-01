@@ -112,9 +112,20 @@ if ($user['status'] == 200) {
                             if (mysqli_num_rows($inspec_run) > 0) {
                                 foreach ($inspec_run as $row) {
                             ?>
-                                 <input type="date" value="<?= $row['datetime_local'] ?>" name = "datetime_local" class="form-control" require>
+                  
+                                
+                                 <!-- <input type="date" class="form-control" autocomplete="off" name = "datetime_local" id="txtDate" />  -->
+                            <!-- <input type="datetime-local" name="datefield" id="datefield" min="today_min" max="today_max"> <span class="validity"></span> -->
+  
 
-                            <?php
+
+<!-- <input type="datetime-local" id="dateInput"> -->
+<!-- <input type="datetime-local" id="datepicker" name="datepicker"> -->
+<!-- <input class="form-control" type="datetime-local" id="datetimepicker" name="datetime_local"> -->
+                    <input type="datetime-local" id="datetime" name="datetime_local" class = "form-control" required>
+
+                         <?php
+                         
                                 }
                             }
                             ?>
@@ -131,6 +142,8 @@ if ($user['status'] == 200) {
                     <option value=""> No Record Found </option>
                 <?php
                             }
+
+                            
                 ?>
                 </form>
 
@@ -143,7 +156,7 @@ if ($user['status'] == 200) {
     echo '<h5>' . $user['message'] . '</h5>';
 }
 ?>
-
+ 
 
 <!-- 
 <?php

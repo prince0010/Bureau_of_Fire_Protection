@@ -1,6 +1,6 @@
 <?php
 
-$pageTitle = "BFP || Inspection Order";
+$pageTitle = "BFP || Inspector Page";
 
 include('includes/header.php'); ?>
 
@@ -41,7 +41,7 @@ include('includes/header.php'); ?>
                                     <th class="text-center">Remarks or Additional Instruction</th>
                                     <th class="text-center">Schedule Time</th>
                                     <th class="text-center">Status</th>
-                                    <th class="text-center">Actions</th>
+                                    <!-- <th class="text-center">Actions</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,12 +57,15 @@ include('includes/header.php'); ?>
                                         <td class="text-center"><?= $servicesItem['purpose_info'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['duration'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['remarks'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['datetime_local'] ?> </span></td>
+                                        <td class="text-center"><?= date('Y-m-d h:i A', strtotime( $servicesItem['datetime_local'] )); ?></span></td>
                                         <td class="text-center">
                                             <?php 
                                             if( $servicesItem['reschedule_update'] == '1'){
                                                 echo '<span class = "badge bg-info"> The Scheduled date<br/>  is Re-scheduled <br/>by the Inspector </span>' ;
                                            
+                                            }
+                                            elseif($servicesItem['status'] == '1'){
+                                                echo '<span class = "badge bg-info"> Checked by by<br/>  the admin </span>' ;
                                             }
                                             elseif($servicesItem['status'] == '2'){
                                                 echo '<span class = "badge bg-info"> Confirmed by<br/>  the admin </span>' ;
@@ -84,9 +87,9 @@ include('includes/header.php'); ?>
                             ?> -->
                                         </td>
 
-                                        <td class="text-center">
+                                        <!-- <td class="text-center">
                                             <a href="delete_inspection_data.php?id=<?= $servicesItem['id'] ?>" class="btn btn-danger btn-sm mx-2 " onclick="return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 <?php
                                 }

@@ -60,7 +60,7 @@
                                 echo '<span class = "badge bg-dark text-white"> TBA </span>';
                             } 
                             else{
-                                echo $servicesItem['datetime_local']; 
+                                echo date('Y-m-d h:i A', strtotime( $servicesItem['datetime_local'] )); 
                             }?>
                               </td>
 
@@ -85,6 +85,9 @@
                                     elseif($servicesItem['status'] == '4'){
                                         echo '<span class = "badge bg-info"> Done Re-input <br/> the Data  <br />the form </span>' ;
                                     } 
+                                    // elseif(($servicesItem['status'] == '2' AND $servicesItem['msg_send'] == '1' AND $servicesItem['admin_confirm'] AND '1')) {
+                                    //     echo '<span class = "badge bg-info"> Process is Done. </span>' ;
+                                    // }
                                
                                     else{
                                         echo '<span class = "badge bg-danger"> "There is Something Wrong!" </span>' ;
@@ -105,7 +108,7 @@
                          
                          <?php
                                 }  
-                                
+                             
                                 else{
                                 ?>
                                 <a href="denied_fille.php?id=<?= $servicesItem['id']?>" class = "btn btn-danger btn-xs"><i style="font-size:17px" class="fa fa-warning"></i></a>

@@ -59,8 +59,9 @@ if ($user['status'] == 200) {
                             if (mysqli_num_rows($inspec_run) > 0) {
                                 foreach ($inspec_run as $row) {
                             ?>
-                                 <input type="date" value="<?= $row['datetime_local'] ?>" name = "datetime_local" class="form-control" require>
-
+                                 <!-- <input type="date"  name = "datetime_local" class="form-control" require> -->
+                                 <!-- <input class="form-control" value="<?= $row['datetime_local'] ?>" type="datetime-local" id="datetimepicker" name="datetime_local"> -->
+                                 <input type="datetime-local" id="datetime" value="<?= $row['datetime_local'] ?>" name="datetime_local" class = "form-control" required>
                             <?php
                                 }
                             }

@@ -8,7 +8,8 @@ if(isset($_POST['resched_data'])){
 
         $query = "UPDATE request SET 
         datetime_local = '$datetime_local',
-        reschedule_update = '1'
+        reschedule_update = '1',
+        status = '2'
         WHERE id = $id";
         $run = mysqli_query($conn, $query);
 

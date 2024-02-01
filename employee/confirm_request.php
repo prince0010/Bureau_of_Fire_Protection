@@ -110,7 +110,7 @@ include('include/header.php'); ?>
                                 <?php
                                 if ($editserv['data']['msg_send'] == 0) {
                                 ?>
-                                  <a href="inspection_confirmation_tag.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark" >Next</a>
+                                  <a href="inspection_order.php?id=<?= $editserv['data']['id'] ?>" class="btn btn-dark" >Next</a>
                                 <?php
                                 } else {
                                 ?>

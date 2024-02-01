@@ -22,7 +22,7 @@ include('includes/header.php'); ?>
                     $role = validate($_GET['status']);
                     $services = mysqli_query($conn, "SELECT * FROM request WHERE inspection_name ='$role' ORDER BY id DESC");
                 } else {
-                    $services = mysqli_query($conn, "SELECT * FROM request WHERE status = '1' OR updated_status = '1' ");
+                    $services = mysqli_query($conn, "SELECT * FROM request WHERE status = '1'");
                     // $services = getAll('request');
                 }
                 if ($services) {
@@ -57,8 +57,11 @@ include('includes/header.php'); ?>
                                             if($servicesItem['status'] == '2' ){
                                                 echo '<span class = "badge bg-success text-white"> Please Check and<br/>  Confirm this Admin </span>';
                                             }
+                                            elseif($servicesItem['status'] == '4' ){
+                                                echo '<span class = "badge bg-success text-white"> Client Updated <br/> the Rejected Data </span>';
+                                            }
                                             else{
-                                                echo '<span class = "badge bg-info text-white"> Client Updated <br/> the Rejected Data </span>';
+                                                echo '<span class = "badge bg-info text-white"> Confirm <br/> the Data </span>';
                                             }
                                         
                                             ?> 

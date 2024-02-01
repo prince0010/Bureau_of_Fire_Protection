@@ -104,42 +104,7 @@ include('includes/header.php'); ?>
                                     <input type="checkbox" <?=$user['data']['denied_remarks'] == true ? 'checked' : '' ;?>  class="my-2 mx-4" name = "remarks" style = "width:30px;height:30px;">   
                                 </div>
                                 </div>
-                                <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label > To </label>
-                                    <br/>
-                                    <input type="checkbox" <?=$user['data']['denied_inspection_name'] == true ? 'checked' : '' ;?> class="my-2 mx-4" name = "inspection_name" style = "width:30px;height:30px;">   
-                                </div>
-                                </div>
-                                <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label > Proceed </label>
-                                    <br/>
-                                    <input type="checkbox" <?=$user['data']['denied_proceed_info'] == true ? 'checked' : '' ;?> class="my-2 mx-4" name = "proceed_info" style = "width:30px;height:30px;">   
-                                </div>
-                                </div>
-                                <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label > Purpose </label>
-                                    <br/>
-                                    <input type="checkbox" <?=$user['data']['denied_purpose_info'] == true ? 'checked' : '' ;?> class="my-2 mx-4" name = "purpose_info" style = "width:30px;height:30px;">   
-                                </div>
-                                </div>
-                                <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label > Duration </label>
-                                    <br/>
-                                    <input type="checkbox" <?=$user['data']['denied_duration'] == true ? 'checked' : '' ;?> class="my-2 mx-4" name = "duration" style = "width:30px;height:30px;">   
-                                </div>
-                                </div>
-                                <div class="col-md-3">
-                                <div class="mb-4">
-                                    <label > Remarks_IO </label>
-                                    <br/>
-                                    <input type="checkbox" <?=$user['data']['denied_remarks_IO'] == true ? 'checked' : '' ;?> class="my-2 mx-4" name = "remarks_io" style = "width:30px;height:30px;">   
-                                </div>
-                                </div>
-                                </div>
+                               
 
                                     <div class="col-md-3">
                                 <div class="mb-3">

@@ -24,7 +24,7 @@ if (isset($_POST['sendBtn'])) {
 
         $base_url = "n8d4xe.api.infobip.com";
         // $api_key = "bdbffe21632c406a7860f50a0c924cdb-96206200-a4c2-4fa6-b815-23efc671e173";
-        $api_key = "0ac4ad78c6b252b017597736de7e9775-3fff9469-17e1-45e5-bcaa-dd19677fada1";
+        $api_key = "9bc6f83f7a473a61e9365a5d588b92ec-83bfe1b6-8cd1-4fb3-a451-acd1154f07d5";
 
         $configuration = new Configuration(host: $base_url, apiKey: $api_key);
 
@@ -43,13 +43,14 @@ if (isset($_POST['sendBtn'])) {
     }
         $query = "UPDATE request SET
         msg_send = '1',
-        status = '1'
+        status = '2'
         WHERE 
         id = '$req_id'
           ";
     $result = mysqli_query($conn, $query);
     if ($result) {
-        redirect('sms_confirmation_tag.php?id=' .$req_id, 'SMS Message Sent. ');
+        // redirect('sms_confirmation_tag.php?id=' .$req_id, 'SMS Message Sent. ');
+        redirect('inspection_order_data.php', 'SMS Message Sent. ');
     } else {
         redirect('sms_notification.php?id=' . $req_id, 'Something Went Wrong. ', 'danger');
     }

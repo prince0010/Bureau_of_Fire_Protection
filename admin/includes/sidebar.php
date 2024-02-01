@@ -48,7 +48,7 @@
             <?= $pageName == 'inspector_page.php' ? 'active' : '' ?>
              " href="inspector_page.php">
                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class = "fa fa-cogs text-dark text-lg"></i>
+                    <i class = "fa fa-user-alt text-dark text-lg"></i>
                 </div>
                 <span class="nav-link-text ms-1">Inspector Page</span>
             </a>

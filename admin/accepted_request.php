@@ -34,14 +34,14 @@
             {
                  // Only one move in folder in order to get into assets
 
-                redirect('denied_io.php', 'User Data Updated Successfully');
+                redirect('inspection_order.php', 'User Data Updated Successfully');
             }
             else{
-                redirect('denied_io.php', 'Something Went Wrong');
+                redirect('inspection_order.php', 'Something Went Wrong');
             }
         }
         else{
-            redirect('denied_io.php', 'Something Went Wrong');
+            redirect('inspection_order.php', 'Something Went Wrong');
         }
     }
     else{

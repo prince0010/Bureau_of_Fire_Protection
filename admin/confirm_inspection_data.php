@@ -246,7 +246,9 @@ if($user['status'] == 200)
                                     <div class="col-md-6">
                                     <div class="mb-3">
                                         <label > Set Scheduled </label>
-                                        <input type="date" value="<?=$user['data']['datetime_local'] ?>" name = "datetime_local" class="form-control" require>
+                                        <!-- <input type="datetime-local" value="<?=$user['data']['datetime_local'] ?>" name = "datetime_local" class="form-control" require> -->
+                                        <!-- <input class="form-control" type="datetime-local" value="<?=$user['data']['datetime_local'] ?>" id="datetimepicker" name="datetime_local"> -->
+                                        <input type="datetime-local" id="datetime" value="<?=$user['data']['datetime_local'] ?>" name="datetime_local" class = "form-control">
                                     </div>
                                     </div>
 

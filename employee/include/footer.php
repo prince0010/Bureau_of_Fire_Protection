@@ -130,7 +130,81 @@
     document.getElementById('alertmessage').remove();
     }, 2000);
   </script>
- 
+  
+  <script>
+//    $(function(){
+//     var dtToday = new Date();
+
+//     var month = dtToday.getMonth() + 1;
+//     var day = dtToday.getDate();
+//     var year = dtToday.getFullYear();
+
+//     if(month < 10)
+//         month = '0' + month.toString();
+//     if(day < 10)
+//         day = '0' + day.toString();
+
+//     var maxDate = year + '-' + month + '-' + day;    
+//     $('#txtDate').attr('max', maxDate);
+// });
+
+// var today = new Date();
+// var dd = today.getDate(); //Current day
+// var mm = today.getMonth() + 1; //January is 0!
+// var yyyy = today.getFullYear(); //(Year is 2022)
+// var hh = today.getHours(); //Current hour
+// var m = today.getMinutes(); //Current minutes
+
+// if (dd < 10)
+// {
+//     dd = '0' + dd;
+// }
+// if (mm < 10) 
+// {
+//     mm = '0' + mm;
+// }
+
+// today_min = `${yyyy}-${mm}-${dd}T10:00`;
+// today_max = `${yyyy}-${mm}-${dd}T11:30`;
+// today_min2 = `${yyyy}-${mm}-${dd}T15:01`;
+// today_max2 = `${yyyy}-${mm}-${dd}T15:30`;
+// //or Year-Month-Day
+// document.getElementById("datefield").setAttribute("min", today_min);
+// document.getElementById("datefield").setAttribute("max", today_max);
+//Set "datefield" = Minimum&Maximum time to current date
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Get the current date
+//     var currentDate = new Date();
+
+//     // Calculate the date two days from now
+//     currentDate.setDate(currentDate.getDate() + 1);
+
+//     // Format the date in a way that date input accepts
+//     var minDate = currentDate.toISOString().slice(0, 10);
+
+//     // Set the min attribute of the date input
+//     document.getElementById("datepicker").max = minDate;
+// });
+
+ // Get the current date and time
+ var currentDate = new Date();
+
+// Calculate the next two days
+var nextDay = new Date(currentDate);
+nextDay.setDate(currentDate.getDate() + 1);
+
+var dayAfterNext = new Date(currentDate);
+dayAfterNext.setDate(currentDate.getDate() + 3);
+
+// Format the dates to match the datetime-local input format
+var formattedNextDay = nextDay.toISOString().slice(0, -8);
+var formattedDayAfterNext = dayAfterNext.toISOString().slice(0, -8);
+
+// Set the min and max attributes of the input element
+document.getElementById("datetime").setAttribute("min", formattedNextDay);
+document.getElementById("datetime").setAttribute("max", formattedDayAfterNext);
+                                </script>
 </body>
 
 </html>

@@ -33,6 +33,7 @@
 
         $is_ban = validate($_POST['is_ban']) == true ? 1 : 0 ;
         $role = validate($_POST['role']);
+        $newuser = '1';
 
         // FILTERED EMAIL AND PASSWORD
         $email = filter_var($emailInput, FILTER_SANITIZE_EMAIL);
@@ -52,7 +53,7 @@
         {
             $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
             
-            $query = "INSERT INTO user(name, phone_num, address, email, password, is_ban, role) VALUES ('$name', '$phone_num','$address','$email', '$hashedPassword','$is_ban','$role')";
+            $query = "INSERT INTO user(name, phone_num, address, email, password, is_ban, role, new_user) VALUES ('$name', '$phone_num','$address','$email', '$hashedPassword','$is_ban','$role', '$newuser')";
             $result = mysqli_query($conn, $query);
 
             if($result)

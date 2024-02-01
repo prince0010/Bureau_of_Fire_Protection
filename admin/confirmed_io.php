@@ -21,7 +21,7 @@ include('includes/header.php'); ?>
                     $role = validate($_GET['status']);
                     $services = mysqli_query($conn, "SELECT * FROM request WHERE inspection_name ='$role' ORDER BY id DESC");
                 } else {
-                    $services = mysqli_query($conn, "SELECT * FROM request WHERE status ='2' ORDER BY id DESC");
+                    $services = mysqli_query($conn, "SELECT * FROM request WHERE status ='2' OR admin_confirm = '1' ORDER BY id DESC");
                 }
                 if ($services) {
                     if (mysqli_num_rows($services) > 0) {

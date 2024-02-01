@@ -48,10 +48,11 @@
 
                       <div class="mb-3">
                         <br />
+                        <?= $dates = date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?>
                 <label>Message</label>
                 <select name="message_status" id="" class = "form-control text-wrap" style ="height:180px" readonly>
                         <option disabled > ---- Accepted ----</option>
-                            <option value="Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is Bureau of Fire Protection we want to inform you that your request of FSIC is already approved please check your request status for the exact date. Thank you for your patience."> Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is Bureau of Fire Protection we want to inform you that your request of FSIC is already approved please check your request status for the exact date. Thank you for your patience.</option>
+                            <option value=" Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is from Nazareth BFP your request for FSIC is approved and the inspection will be on <?= $dates ?> , and see you"> Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is from Nazareth BFP your request for FSIC is approved and the inspection will be on  <?= date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?>, and see you</option>
                             <option disabled > ---- Denied ----</option>
                             <option value=" Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. We'll re-check it again." >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. We'll re-check it again.</option>
                         </select>

@@ -482,12 +482,7 @@
         $Landmark = validate($_POST['Landmark']) == true ? 1 : 0 ;
         $Barangay = validate($_POST['Barangay']) == true ? 1 : 0 ;
         $remarks = validate($_POST['remarks']) == true ? 1 : 0 ;
-        $inspection_name = validate($_POST['inspection_name']) == true ? 1 : 0 ;
-        $proceed_info = validate($_POST['proceed_info']) == true ? 1 : 0 ;
-        $purpose_info = validate($_POST['purpose_info']) == true ? 1 : 0 ;
-        $duration = validate($_POST['duration']) == true ? 1 : 0 ;
-        $remarks_io = validate($_POST['remarks_io']) == true ? 1 : 0 ;
-        
+    
          $id = validate($_POST['userId']);
         $userID = getByID('request', $id);
         
@@ -506,9 +501,6 @@
             denied_landmark = '$Landmark',
             denied_barangay = '$Barangay',
             denied_remarks = '$remarks',
-            denied_inspection_name = '$inspection_name',
-            denied_proceed_info = '$proceed_info',
-            denied_duration = '$duration',
             status = '3'
             WHERE id = '$id' ";
               $result = mysqli_query($conn, $query);

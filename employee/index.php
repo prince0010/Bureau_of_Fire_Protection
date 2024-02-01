@@ -44,7 +44,7 @@ include('include/header.php'); ?>
                 } else {
                     // $services  = getAll('request');
                     $table = validate('request');
-                    $query = "SELECT * FROM $table WHERE status = '0' ORDER BY id DESC";
+                    $query = "SELECT * FROM $table WHERE status = '0' OR status = '2' AND msg_send = '0' ORDER BY id DESC";
                     $services = mysqli_query($conn, $query);
                 }
                 if ($services ) {
@@ -94,14 +94,24 @@ include('include/header.php'); ?>
                                 <?php 
                                 if($servicesItem['status'] == 1){
                                     ?>
+
                                      <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
                                         <a href="delete_request.php?id=<?= $servicesItem['id']?>"
                                          class = "btn btn-danger btn-xs "
                                          onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
                                     <?php
                                       }
+                                      elseif($servicesItem['status'] == 2 && $servicesItem['admin_confirm'] == 1){
+                                        ?>
+                                        <a href="sms_notification.php?id=<?= $servicesItem['id']?>" class = "btn btn-dark btn-xs"><i style="font-size:17px" class="fa fa-envelope"></i></a>
+                                           <a href="delete_request.php?id=<?= $servicesItem['id']?>"
+                                            class = "btn btn-danger btn-xs "
+                                            onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
+                                       <?php
+                                      }
                                     else{
                                     ?>
+                                       
                                      <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
                                         <a href="confirm_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-success btn-xs" name = "confirmBtn"><i style="font-size:17px" class="fa fa-check"></i></a>
                                         <a href="delete_request.php?id=<?= $servicesItem['id']?>"

@@ -16,18 +16,18 @@
             {
                  // Only one move in folder in order to get into assets
 
-                redirect('inspection_order.php', 'Inspection Order Deleted Successfully');
+                redirect('confirmed_io.php', 'Inspection Order Deleted Successfully');
             }
             else{
-                redirect('inspection_order.php', 'Something Went Wrong');
+                redirect('confirmed_io.php', 'Something Went Wrong');
             }
         }
         else{
-            redirect('inspection_order.php', 'Something Went Wrong');
+            redirect('confirmed_io.php', 'Something Went Wrong');
         }
     }
     else{
-        redirect('inspection_order.php', $paraResult);
+        redirect('confirmed_io.php', $paraResult);
     }
 
 

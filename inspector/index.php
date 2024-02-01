@@ -24,7 +24,7 @@ include('includes/header.php'); ?>
                     $name = $_SESSION['loggedInUser']['name'];
                    
                     $currentDate = gmdate('Y-m-d ');
-                    $services = mysqli_query($conn, "SELECT * FROM request WHERE inspection_name = '$name' AND inspector_sched = '1' AND datetime_local > '$currentDate '");
+                    $services = mysqli_query($conn, "SELECT * FROM request WHERE inspection_name = '$name' AND inspector_sched = '1' AND datetime_local >'$currentDate'");
                 }
                 if ($services) {
                     if (mysqli_num_rows($services) > 0) {
@@ -55,12 +55,15 @@ include('includes/header.php'); ?>
                                         <td class="text-center"><?= $servicesItem['purpose_info'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['duration'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['remarks'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['datetime_local'] ?> </span></td>
+                                        <td class="text-center"><?= date('Y-m-d h:i A', strtotime( $servicesItem['datetime_local'] )); ?></span></td>
                                         <td class="text-center">
                                             <?php 
                                             if( $servicesItem['reschedule_update'] == '1'){
                                                 echo '<span class = "badge bg-info"> The Scheduled date<br/>  is Re-scheduled <br/>by You </span>' ;
                                            
+                                            }
+                                            elseif($servicesItem['status'] == '1'){
+                                                echo '<span class = "badge bg-info"> Checked by by<br/>  the admin </span>' ;
                                             }
                                             elseif($servicesItem['status'] == '2'){
                                                 echo '<span class = "badge bg-info"> Confirmed by<br/>  the admin </span>' ;

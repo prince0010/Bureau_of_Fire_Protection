@@ -6,8 +6,9 @@ require '../config/function.php';
 if(isset($_POST['inspecSave'])){
     $inspectId = validate($_POST['inspec_Id']);
     $insector_name = validate($_POST['inspector_name']);
-    $datetime_local = validate($_POST['datetime_local']);
-    $proceed = validate($_POST['proceed']);
+    $datetime_local = date('Y-m-d h:i A', strtotime($_POST['datetime_local']));
+    // $datetime_local = validate($_POST['datetime_local']);
+    $proceed = validate($_POST['proceed']); 
     $purpose = validate($_POST['purpose']);
     $duration = validate($_POST['duration']);
     $remarks = validate($_POST['remarks']);
@@ -86,10 +87,10 @@ if(isset($_POST['inspecSave'])){
 
         if($result)
         {
-            redirect('index.php', 'Select Denied Done');
+            redirect('denied_io.php', 'Select Denied Done');
         }
         else{
-            redirect('index.php', 'Something Went Wrong. ', 'danger');
+            redirect('denied_io.php', 'Something Went Wrong. ', 'danger');
         }
     }
 
@@ -157,10 +158,10 @@ if(isset($_POST['inspecSave'])){
        
         if($result)
         {
-            redirect('index.php', 'Select Denied Done');
+            redirect('denied_io.php', 'Select Denied Done');
         }
         else{
-            redirect('index.php', 'Something Went Wrong. ', 'danger');
+            redirect('denied_io.php', 'Something Went Wrong. ', 'danger');
       }
     }
       

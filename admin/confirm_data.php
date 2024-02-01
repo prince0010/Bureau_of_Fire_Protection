@@ -11,7 +11,7 @@
 
         if($services['status'] == 200){
 
-            $query = "UPDATE request SET status = '2' WHERE id = $serviceId";
+            $query = "UPDATE request SET status = '2', admin_confirm = '1' WHERE id = $serviceId";
             
             $serviceDeleteRes = mysqli_query($conn, $query);
             if($serviceDeleteRes)

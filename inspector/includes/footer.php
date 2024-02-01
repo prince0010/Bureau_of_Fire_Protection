@@ -132,7 +132,25 @@
     document.getElementById('alertmessage').remove();
     }, 2000);
   </script>
- 
+  
+  <script>
+   var currentDate = new Date();
+
+// Calculate the next two days
+var nextDay = new Date(currentDate);
+nextDay.setDate(currentDate.getDate() + 1);
+
+var dayAfterNext = new Date(currentDate);
+dayAfterNext.setDate(currentDate.getDate() + 3);
+
+// Format the dates to match the datetime-local input format
+var formattedNextDay = nextDay.toISOString().slice(0, -8);
+var formattedDayAfterNext = dayAfterNext.toISOString().slice(0, -8);
+
+// Set the min and max attributes of the input element
+document.getElementById("datetime").setAttribute("min", formattedNextDay);
+document.getElementById("datetime").setAttribute("max", formattedDayAfterNext);
+</script>
 </body>
 
 </html>

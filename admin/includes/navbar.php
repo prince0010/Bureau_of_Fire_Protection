@@ -68,12 +68,36 @@
             </div>
               </ul>
             </li>
-             
               <li class="nav-item dropdown pe-2 d-flex align-items-center mx-2">
               <!-- Bell Notif -->
               
               <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell cursor-pointer"></i>
+              <span class="label label-pill label-danger count" style="border-radius:10px;">
+              <?php 
+              
+                  $count = 1;
+                      $sql = "SELECT new_user FROM user WHERE role = 'Client' ORDER BY created_at desc";
+                      $result = mysqli_query($conn, $sql);
+                      // $row = mysqli_fetch_assoc($result);
+                      if(mysqli_fetch_array($result)){
+                        $row = $result->fetch_assoc();
+                          if($row['new_user'] == '1'){
+                             echo '<span class="hideable" onclick="hideElement(this)" style = "height: 15px;  width: 15px;   background-color: red;   border-radius: 50%;display: inline-block; text-align: center; color: white;"> '.$count++.'</span>';
+                            //  $count++;
+                          }
+                          else{
+                            $count = 0;
+                          }
+                        }
+                          ?>
+                          <script>
+    function hideElement(element) {
+        // Hide the clicked element
+        element.style.display = 'none';
+    }
+</script>
+                       
+            </span> <i class="fa fa-bell cursor-pointer"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
               <div style="height: 200px; overflow-y:scroll">
