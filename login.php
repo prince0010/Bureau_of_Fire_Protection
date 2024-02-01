@@ -11,14 +11,14 @@ if(isset($_SESSION['auth']))
 ?>
         
         <div class="py-4 bg-secondary text-center">
-            <h4 class="text-white"> Login </div>
+            <h4 class="text-white">  </div>
         </div>
 
         <div class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-4">                    
-                        <div class="card shadow-sm">
+                    <div class="col-md-4 ">                    
+                        <div class="card shadow-sm " style="margin-top: 25%;">
                             <div class="card-header">
                                 <h4>Login</h4>
                             </div>
