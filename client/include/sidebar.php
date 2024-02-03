@@ -3,7 +3,7 @@
       <a class="navbar-brand m-0">
       <div class="text-center">
         <a href="index.php"  >
-        <img src="assets/img/logo.png" style="margin-top: -90px;" width="60% " class="">
+        <img src="assets/img/apple-icon.png" style="margin-top: -90px;" width="60% " class="">
       <p class = " text-break " style= "font-size: 18px;">Nazareth Bureau of Fire Protection</p>
       </a>
       </div>

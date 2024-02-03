@@ -138,8 +138,4 @@ function hideMessage() {
 };
 setTimeout(hideMessage, 10000);
 </script> -->
-<?php 
-
-
-include('./client/includes/footer.php');
-?>
+<?php include('inc/footer.php'); ?>

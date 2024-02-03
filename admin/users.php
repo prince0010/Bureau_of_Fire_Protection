@@ -21,6 +21,7 @@ include('includes/header.php'); ?>
                                         Admin</option>
                                     <option value="Client" <?= isset($_GET['status']) == true ? ($_GET['status'] == 'Client' ? 'selected' : '') : ''  ?>>Client</option>
                                     <option value="Employee" <?= isset($_GET['status']) == true ? ($_GET['status'] == 'Employee' ? 'selected' : '') : ''  ?>>Employee</option>
+                                    <option value="Inspector" <?= isset($_GET['status']) == true ? ($_GET['status'] == 'Inspector' ? 'selected' : '') : ''  ?>>Inspector</option>
                                 </select>
                             </div>
                             <div class="col-md-4">

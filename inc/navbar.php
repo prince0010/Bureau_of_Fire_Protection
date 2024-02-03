@@ -18,16 +18,6 @@
 
         <li class="nav-item">
 
-    
-
-        <li class="nav-item">
-          <a class="nav-link" href="about_us.php">Link</a>
-        </li>
-      
-        <li class="nav-item">
-          <a class="nav-link " href="services.php" > Services</a>
-        </li>
-      
         <li class="nav-item">
           <a class="nav-link " href="contact_us.php" > Contact Us</a>
         </li>
