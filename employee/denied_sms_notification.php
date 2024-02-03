@@ -3,7 +3,6 @@
 
 ?>
 
-
 <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -23,7 +22,7 @@
                         ?>
 
                 <div class="card-header">
-                    <h5> Send Accepted Message
+                    <h5> Send Denied Message
                     <a href="index.php" class="btn btn-dark float-end">Back</a>
                     </h5>
                    
@@ -51,8 +50,8 @@
                         <!-- <?= $dates = date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?> -->
                 <label>Message</label>
                 <select name="message_status" id="" class = "form-control text-wrap" style ="height:180px" readonly>
-                        <option disabled > ---- Accepted ----</option>
-                            <option value=" Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is from Nazareth BFP your request for FSIC is approved and the inspection will be on <?= $dates ?> , and see you"> Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is from Nazareth BFP your request for FSIC is approved and the inspection will be on  <?= date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?>, and see you</option>
+                            <option disabled > ---- Denied ----</option>
+                            <option value=" Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems that the Admin Denied Your Request. Please re-check your form again." >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems that the Admin Denied Your Request. Please re-check your form again.</option>
                         </select>
                                     </div>
 

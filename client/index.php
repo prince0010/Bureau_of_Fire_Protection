@@ -100,7 +100,7 @@
                                 <?php
                                 // if($servicesItem['status'] == '3' ||$servicesItem['denied_remarks_IO'] != '0' || $servicesItem['denied_owner_name'] != '0' || $servicesItem['denied_business_name'] != '0' || $servicesItem['denied_address'] != '0' || $servicesItem['denied_phone_num'] != '0' || $servicesItem['denied_upload_permit'] != '0' || $servicesItem['denied_purpose_info'] != '0' ||
                                 // $servicesItem['denied_landmark'] != '0' || $servicesItem['denied_barangay'] != '0' || $servicesItem['denied_remarks'] != '0' || $servicesItem['denied_inspection_name'] != '0' || $servicesItem['denied_proceed_info'] != '0' || $servicesItem['denied_duration'] != '0'){
-                                if(($servicesItem['status'] != '3')){
+                                if(($servicesItem['status'] == '0')){
                              ?>
                                     <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
                                <a href="edit_request.php?id=<?= $servicesItem['id'] ?>" class="btn btn-success btn-xs"><i style="font-size:17px" class="fa fa-edit"></i></a>
@@ -108,6 +108,11 @@
                          
                          <?php
                                 }  
+                                elseif($servicesItem['status'] == '2'){
+                                    ?>
+                                    <a href="view_request.php?id=<?= $servicesItem['id']?>" class = "btn btn-blue btn-xs"><i style="font-size:17px" class="fa fa-eye"></i></a>
+                              <?php
+                                }
                              
                                 else{
                                 ?>

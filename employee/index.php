@@ -44,7 +44,7 @@ include('include/header.php'); ?>
                 } else {
                     // $services  = getAll('request');
                     $table = validate('request');
-                    $query = "SELECT * FROM $table WHERE status = '0' OR status = '2' AND msg_send = '0' ORDER BY id DESC";
+                    $query = "SELECT * FROM $table WHERE status = '0' OR status = '2' AND msg_send = '0' OR status = '3' ORDER BY id DESC";
                     $services = mysqli_query($conn, $query);
                 }
                 if ($services ) {
@@ -82,6 +82,9 @@ include('include/header.php'); ?>
                                  elseif($servicesItem['status'] == 2){
                                     echo '<span class = "badge bg-success text-white"> Confirmed by <br /> Admin </span>';
                                      }
+                                     elseif($servicesItem['status'] == 3){
+                                        echo '<span class = "badge bg-danger text-white"> Denied by <br /> Admin </span>';
+                                         }
                                      else{
                                         echo '<span class = "badge bg-success text-white"> Pending for <br /> Employee Check </span>';
                                          }
@@ -104,6 +107,14 @@ include('include/header.php'); ?>
                                       elseif($servicesItem['status'] == 2 && $servicesItem['admin_confirm'] == 1){
                                         ?>
                                         <a href="sms_notification.php?id=<?= $servicesItem['id']?>" class = "btn btn-dark btn-xs"><i style="font-size:17px" class="fa fa-envelope"></i></a>
+                                           <a href="delete_request.php?id=<?= $servicesItem['id']?>"
+                                            class = "btn btn-danger btn-xs "
+                                            onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
+                                       <?php
+                                      }
+                                      elseif($servicesItem['status'] == 3){
+                                        ?>
+                                        <a href="denied_sms_notification.php?id=<?= $servicesItem['id']?>" class = "btn btn-dark btn-xs"><i style="font-size:17px" class="fa fa-envelope"></i></a>
                                            <a href="delete_request.php?id=<?= $servicesItem['id']?>"
                                             class = "btn btn-danger btn-xs "
                                             onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>

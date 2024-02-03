@@ -35,7 +35,6 @@ if ($user['status'] == 200) {
                     <hr class="bg-dark">
                 </div>
                 <div class="card-body">
-                    <h3>View Information</h3>
                     <div id="alertmessage">
                         <?= alertMessage(); ?>
                     </div>
@@ -141,10 +140,108 @@ if ($user['status'] == 200) {
                                 <td>
                                     <?= $user['data']['remarks']; ?>
                                 </td>
-
                             </tr>
+
+                            <tr>
+                                <td>
+                                    Inspector Name
+                                </td>
+                                <td>
+                                    <?php 
+                                    if($user['data']['inspection_name'] == ''){
+                                        echo '<span class = "badge bg-dark text-white"> TBA </span>';
+                                    }
+                                    else{
+                                        echo $user['data']['inspection_name'];
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    Purpose
+                                </td>
+                                <td>
+                                <?php 
+                                    if($user['data']['purpose_info'] == ''){
+                                        echo '<span class = "badge bg-dark text-white"> TBA </span>';
+                                    }
+                                    else{
+                                        echo $user['data']['purpose_info'];
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Proceed
+                                </td>
+                                <td>
+                                <?php 
+                                    if($user['data']['proceed_info'] == ''){
+                                        echo '<span class = "badge bg-dark text-white"> TBA </span>';
+                                    }
+                                    else{
+                                        echo $user['data']['proceed_info']; 
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Duration
+                                </td>
+                                <td>
+                                <?php 
+                                    if($user['data']['duration'] == ''){
+                                        echo '<span class = "badge bg-dark text-white"> TBA </span>';
+                                    }
+                                    else{
+                                        echo $user['data']['duration']; 
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Set Scheduled
+                                </td>
+                                <td>
+                                <?php 
+                                    if($user['data']['datetime_local'] == ''){
+                                        echo '<span class = "badge bg-dark text-white"> TBA </span>';
+                                    }
+                                    else{
+                                        echo date('Y-m-d h:i A', strtotime($user['data']['datetime_local'] )); 
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                   Remarks
+                                </td>
+                                <td>
+                                <?php 
+                                    if($user['data']['remarks_IO'] == ''){
+                                        echo '<span class = "badge bg-dark text-white"> TBA </span>';
+                                    }
+                                    else{
+                                        echo $user['data']['remarks_IO']; 
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+
+                            
                         </tbody>
                     </table>
+                    <br /><br /><br /><br />
                 </div>
             </div>
         </div>
@@ -158,4 +255,4 @@ if ($user['status'] == 200) {
 
 
 
-<?php include('include/footer.php') ?>
+<?php include('include/scripts.php') ?>
