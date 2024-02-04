@@ -124,9 +124,9 @@ include('include/header.php'); ?>
                                         </td>
 
                                         <td class="text-center">
-                                        <a href="delete_inspection_order.php?id=<?= $servicesItem['id']?>"
+                                        <!-- <a href="delete_inspection_order.php?id=<?= $servicesItem['id']?>"
                                          class = "btn btn-danger btn-xs "
-                                         onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a>
+                                         onclick = "return confirm('Are you sure you want to delete this data?')"><i style="font-size:17px" class="fa fa-trash-o"></i></a> -->
                                             <a href="view_inspection_order.php?id=<?= $servicesItem['id']; ?>" class="btn btn-success btn-sm"><i style="font-size:17px" class="fa fa-eye"></i></a>
                                         </td>
                                     </tr>

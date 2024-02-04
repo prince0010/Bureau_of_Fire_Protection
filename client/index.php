@@ -10,14 +10,14 @@
                         </div>
             <div class="card-header text-center">
                     <h3> 
-                    Click Here to Fill Up
+                 Welcome to the Bureau of Fire Protection
                     </h3>
                 </div>
                 <hr class = "bg-dark">
              
                 <div class="card-body">
                 <div class=" text-center">
-                    <a href="form_request.php?id=<?= $_SESSION["loggedInUser"]['id'] ?>" class="btn btn-dark p-4">Fill Up</a> 
+                    <a href="form_request.php?id=<?= $_SESSION["loggedInUser"]['id'] ?>" class="btn btn-dark p-4">  Click Here to Fill Up</a> 
                     </div>
                        <hr class = "bg-dark">
                        <h5 class = "mx-2 my-4" style="font-weight: bold;"> Status</h5>

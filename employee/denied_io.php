@@ -105,7 +105,7 @@ include('include/header.php'); ?>
                                         elseif($servicesItem['updated_status'] == '0' ) {
                                             echo '<span class = " badge bg-dark text-white"> Request Rejected </span>';
                                         }
-                                       elseif($servicesItem['updated_status'] == '1') {
+                                       elseif($servicesItem['updated_status'] == '1' || $servicesItem['status'] == '4') {
                                            echo '<span class = " badge bg-dark text-white"> The Request is <br/> Updated by the Client User </span>' ;
                                         }
                                         ?> 
