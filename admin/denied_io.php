@@ -44,13 +44,13 @@ include('includes/header.php'); ?>
                                 foreach ($services as $servicesItem) {
                                 ?>
                                     <tr>
-                                        <td class="text-center"><?= $servicesItem['owner_name'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['inspection_name'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['proceed_info'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['purpose_info'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['duration'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['remarks'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['remarks'] ?> </span></td>
+                                        <td class="text-center"><?php echo $servicesItem['owner_name'] == '' ? '<span class = "badge bg-dark text-white"> TBA </span>' : $servicesItem['owner_name'] ?> </span></td>
+                                        <td class="text-center"><?php echo $servicesItem['inspection_name'] == '' ? '<span class = "badge bg-dark text-white"> TBA </span>' : $servicesItem['inspection_name'] ?> </span></td>
+                                        <td class="text-center"><?php echo $servicesItem['proceed_info'] == '' ? '<span class = "badge bg-dark text-white"> TBA </span>' : $servicesItem['proceed_info']?> </span></td>
+                                        <td class="text-center"><?php echo $servicesItem['purpose_info'] == '' ? '<span class = "badge bg-dark text-white"> TBA </span>' : $servicesItem['purpose_info']?> </span></td>
+                                        <td class="text-center"><?php echo $servicesItem['duration'] == '' ? '<span class = "badge bg-dark text-white"> TBA </span>' : $servicesItem['duration']?> </span></td>
+                                        <td class="text-center"><?php echo $servicesItem['remarks_IO'] == '' ? '<span class = "badge bg-dark text-white"> TBA </span>' : $servicesItem['remarks']?> </span></td>
+                                        <td class="text-center"><?php echo $servicesItem['status'] == 3 ? '<span class = "badge bg-danger text-white"> Admin Denied <br/> the Request </span>' : '<span class = "badge bg-dark text-white"> The Client Re-Input <br/> the Request </span>' ?> </span></td>
                                         <!--   <td class = "text-center">
                            <?php
                                     if ($servicesItem['status'] == 1) {

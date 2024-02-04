@@ -51,20 +51,20 @@
                 <label>Message</label>
                 <select name="message_status" id="" class = "form-control text-wrap" style ="height:180px" readonly>
                             <option disabled > ---- Denied ----</option>
-                            <option value=" Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. Please re-check it again." >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems to have a problem with checking your Request List. Please re-check it again.</option>
+                            <option value="Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?>, This is from Nazareth Bureau of Fire Protection. we can't process your Inspection Order as it seems that the Admin denied your request. Please recheck your form again." > Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?>, This is from Nazareth Bureau of Fire Protection. we can't process your Inspection Order as it seems that the Admin denied your request. Please recheck your form again.</option>
                         </select>
                                     </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3" >
                             <label for="">
                             <input type = "radio" name = "provider" value = "infobip" checked />Infobip
                             </label>
 
-                            <br/>
+                            <!-- <br/>
 
                             <label for="">
                             <input type = "radio" name = "provider" value = "Twilio" />Twilio
-                            </label>
+                            </label> -->
 
                         </div>
 

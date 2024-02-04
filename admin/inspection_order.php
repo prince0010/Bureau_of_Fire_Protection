@@ -10,7 +10,7 @@ include('includes/header.php'); ?>
             <div class="card-header">
                 <h5> Inspectors Data
                     <a href="confirmed_io.php" class="btn btn-dark float-end mx-2"> Confirm Request I/O</a>
-                    <a href="denied_io.php" class="btn btn-dark float-end"> Denied Request I/O</a>
+                    <!-- <a href="denied_io.php" class="btn btn-dark float-end"> Denied Request I/O</a> -->
                 </h5>
             </div>
             <div class="card-body">

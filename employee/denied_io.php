@@ -122,7 +122,7 @@ include('include/header.php'); ?>
 
                                         <td class="text-center">
                                         <a href="accepted_request.php?id=<?= $servicesItem['id']; ?>" class="btn btn-success " onclick="return confirm('Confirm this Action?')"> Accept </a>
-                                            <a href="denied_request_inc.php?id=<?= $servicesItem['id'];  ?>" class="btn btn-danger mx-2 "> Denied </a>
+                                            <!-- <a href="denied_request_inc.php?id=<?= $servicesItem['id'];  ?>" class="btn btn-danger mx-2 "> Denied </a> -->
                                             <a href="sms_message_inc.php?id=<?=$servicesItem['id']; ?>" class="btn btn-dark ">Update User</a>
                                         </td>
                                     </tr>

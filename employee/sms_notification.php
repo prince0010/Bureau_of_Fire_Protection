@@ -52,7 +52,8 @@
                 <label>Message</label>
                 <select name="message_status" id="" class = "form-control text-wrap" style ="height:180px" readonly>
                         <option disabled > ---- Accepted ----</option>
-                            <option value=" Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is from Nazareth BFP your request for FSIC is approved and the inspection will be on <?= $dates ?> , and see you"> Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is from Nazareth BFP your request for FSIC is approved and the inspection will be on  <?= date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?>, and see you</option>
+                            <!-- <option value=" Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?>. This is from Nazareth Bureau of Fire Protection. Your request for Fire Safety Inspection Certificate is approved, and the inspection will be on<?= $dates ?>. See you."> Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?> this is from Nazareth BFP your request for FSIC is approved and the inspection will be on  <?= date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?>, and see you</option> -->
+                            <option value=" Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?>. This is from Nazareth Bureau of Fire Protection. Your request for Fire Safety Inspection Certificate is approved, and the inspection will be on<?= date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?>. See you."> Hello Gooday Mr/Mrs. <?=$editserv['data']['owner_name'];?>. This is from Nazareth Bureau of Fire Protection. Your request for Fire Safety Inspection Certificate is approved, and the inspection will be on<?= date('Y-m-d h:i A', strtotime( $editserv['data']['datetime_local'])); ?>. See you.</option>
                         </select>
                                     </div>
 

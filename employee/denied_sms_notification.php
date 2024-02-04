@@ -51,7 +51,7 @@
                 <label>Message</label>
                 <select name="message_status" id="" class = "form-control text-wrap" style ="height:180px" readonly>
                             <option disabled > ---- Denied ----</option>
-                            <option value=" Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems that the Admin Denied Your Request. Please re-check your form again." >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?> We can't process your Inspection Order since it seems that the Admin Denied Your Request. Please re-check your form again.</option>
+                            <option value=" Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?>, This is from Nazareth Bureau of Fire Protection. we can't process your Inspection Order as it seems that the Admin denied your request. Please recheck your form again." >  Hello Mr/Mrs. <?=$editserv['data']['owner_name'];?>, This is from Nazareth Bureau of Fire Protection. we can't process your Inspection Order as it seems that the Admin denied your request. Please recheck your form again.</option>
                         </select>
                                     </div>
 

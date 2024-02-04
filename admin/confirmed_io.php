@@ -48,7 +48,7 @@ include('includes/header.php'); ?>
                                         <td class="text-center"><?= $servicesItem['proceed_info'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['purpose_info'] ?> </span></td>
                                         <td class="text-center"><?= $servicesItem['duration'] ?> </span></td>
-                                        <td class="text-center"><?= $servicesItem['remarks'] ?> </span></td>
+                                        <td class="text-center"><?= $servicesItem['remarks_IO'] ?> </span></td>
                                         <!--   <td class = "text-center">
                            <?php
                                     if ($servicesItem['status'] == 1) {
