@@ -36,8 +36,9 @@ if (isset($_POST['sendBtn'])) {
             destinations: [$destination],
             text: $smsessage
         );
-
         $request = new SmsAdvancedTextualRequest(messages: [$message]);
+
+
 
         $response = $api->sendSmsMessage($request);
     }
