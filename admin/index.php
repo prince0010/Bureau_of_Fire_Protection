@@ -151,7 +151,7 @@ $colorToday = ($percentageInspectionOrdersToday > 0) ? 'green' : 'red';
     <div class="col-md-4">
         <div class="card card-body p-3" style="background-color: rgba(11,29,120);">
             <i class="fa fa-file-alt text-white" style="font-size: 30px; margin-bottom: 10px;"></i>
-            <h5 class="card-title mb-4 text-white">Today</h5>
+            <h5 class="card-title mb-4 text-white">Today Inspection Order Request</h5>
             <p class="card-text text-white">Today: <?= $todayCount ?></p>
             <?php
                 // Calculate the percentage of inspection orders for today
