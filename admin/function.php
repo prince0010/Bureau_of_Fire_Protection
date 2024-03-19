@@ -243,7 +243,7 @@
         $name = validate($_POST['name']);
         $position = validate($_POST['position']);
       
-        $query = "INSERT INTO inspector_user (inspector_name, position) VALUES ('$name', '$position')";
+        $query = "INSERT INTO inspector_user (inspection_name, position) VALUES ('$name', '$position')";
         $result = mysqli_query($conn, $query);
 
         if($result){
